@@ -14,7 +14,7 @@ export default async function Home() {
   return (
     <div className="flex min-h-screen flex-col bg-background text-foreground">
       <Header />
-      <main className="flex-1">
+      <main className="flex-1 pt-16">
         <HeroSection personalizedMessage={message} />
         <ServicesSection />
         <PortfolioSection />

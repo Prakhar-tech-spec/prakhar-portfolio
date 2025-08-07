@@ -1,3 +1,4 @@
+
 "use client";
 
 import React, { useState, useEffect } from 'react';
@@ -6,28 +7,51 @@ import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/co
 import { Menu } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
-const ADVENTURELogo = () => (
-  <div className="flex items-center gap-2 font-semibold">
-    <div className="bg-primary text-primary-foreground h-8 w-8 flex items-center justify-center rounded-md">
-      <span className="text-lg font-bold">AD</span>
-    </div>
-    <span className="text-xl font-bold font-headline text-foreground">VENTURE</span>
-  </div>
-);
-
-export function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activeLink, setActiveLink] = useState('#hero');
-  
-  const navLinks = [
+const navLinks = [
     { href: '#hero', label: 'Home' },
     { href: '#services', label: 'Services' },
     { href: '#portfolio', label: 'Results' },
     { href: '#testimonials', label: 'Testimonials' },
     { href: '#contact', label: 'Contact' },
-  ];
+];
 
-  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, href: string) => {
+const ADVENTURELogo = () => (
+    <div className="flex items-center gap-2 font-semibold">
+      <div className="bg-primary text-primary-foreground h-8 w-8 flex items-center justify-center rounded-md">
+        <span className="text-lg font-bold">AD</span>
+      </div>
+      <span className="text-xl font-bold font-headline text-foreground">VENTURE</span>
+    </div>
+);
+
+
+export function Header() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeLink, setActiveLink] = useState('#hero');
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+      
+      const sections = navLinks.map(link => document.getElementById(link.href.substring(1))).filter(Boolean);
+      let currentSectionId = '#hero';
+
+      for (const section of sections) {
+        const rect = section!.getBoundingClientRect();
+        if (rect.top <= 100 && rect.bottom >= 100) {
+          currentSectionId = `#${section!.id}`;
+          break;
+        }
+      }
+      setActiveLink(currentSectionId);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, href: string) => {
     e.preventDefault();
     const targetId = href.substring(1);
     const targetElement = document.getElementById(targetId);
@@ -37,91 +61,79 @@ export function Header() {
     setActiveLink(href);
     setIsMenuOpen(false);
   };
-  
-  useEffect(() => {
-    const handleScrollObserver = () => {
-      const sections = navLinks.map(link => document.getElementById(link.href.substring(1))).filter(Boolean);
-      const currentSection = sections.find(section => {
-        const rect = section!.getBoundingClientRect();
-        return rect.top <= 100 && rect.bottom >= 100;
-      });
-      if (currentSection) {
-        setActiveLink(`#${currentSection.id}`);
-      }
-    };
-    
-    window.addEventListener('scroll', handleScrollObserver);
-    return () => window.removeEventListener('scroll', handleScrollObserver);
-  }, [navLinks]);
-
 
   const Logo = () => (
-    <a href="#" className="flex items-center gap-2 font-semibold" onClick={(e) => handleScroll(e, '#hero')}>
+    <a href="#hero" className="flex items-center gap-2 font-semibold" onClick={(e) => handleLinkClick(e, '#hero')}>
       <ADVENTURELogo />
     </a>
   );
 
   const NavMenu = ({ isMobile = false }) => (
     <nav className={cn(
-      "items-center gap-6 text-sm",
-      isMobile ? "flex flex-col items-start gap-4 p-4 text-lg" : "hidden md:flex"
+      "flex items-center gap-6 text-sm",
+      isMobile ? "flex-col items-start gap-4 p-4 text-lg" : "hidden md:flex"
     )}>
       {navLinks.map((link) => (
-         <a
+        <a
           key={link.href}
           href={link.href}
-          onClick={(e) => handleScroll(e, link.href)}
+          onClick={(e) => handleLinkClick(e, link.href)}
           className={cn(
-            "relative transition-colors hover:text-primary",
-            activeLink === link.href ? "text-primary" : "text-muted-foreground"
+            "transition-colors hover:text-primary",
+            activeLink === link.href ? "text-primary font-semibold" : "text-muted-foreground"
           )}
         >
           {link.label}
-          {activeLink === link.href && !isMobile && (
-             <span className="absolute left-0 -bottom-2 h-0.5 w-full bg-primary transition-all"></span>
-          )}
         </a>
       ))}
     </nav>
   );
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 p-4">
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between rounded-full border border-border/40 bg-background/80 px-4 sm:px-6 backdrop-blur-lg supports-[backdrop-filter]:bg-background/60">
-        <div className="flex items-center">
-           <Logo />
-        </div>
-        
-        <div className="hidden md:flex items-center gap-6">
-          <NavMenu />
-          <Button asChild className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full">
-            <a href="#contact" onClick={(e) => handleScroll(e, '#contact')}>Hire Me</a>
-          </Button>
-        </div>
-
-        <div className="flex items-center md:hidden">
-           <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
-            <SheetTrigger asChild>
-              <Button variant="ghost" size="icon">
-                <Menu className="h-6 w-6" />
-                <span className="sr-only">Toggle navigation menu</span>
+    <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+      <div className={cn(
+          "mx-auto flex h-16 max-w-7xl items-center justify-between transition-all duration-300 px-4",
+          isScrolled ? "mt-2" : "mt-0"
+      )}>
+        <div className={cn(
+            "flex w-full items-center justify-between rounded-full border border-transparent px-4 sm:px-6 transition-all duration-300",
+            isScrolled ? "border-border/40 bg-background/80 backdrop-blur-lg supports-[backdrop-filter]:bg-background/60" : ""
+        )}>
+            <div className="flex items-center">
+              <Logo />
+            </div>
+    
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex items-center gap-4">
+              <NavMenu />
+              <Button asChild size="sm" className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full">
+                <a href="#contact" onClick={(e) => handleLinkClick(e, '#contact')}>Hire Me</a>
               </Button>
-            </SheetTrigger>
-            <SheetContent side="right">
-              <SheetHeader>
-                 <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
-              </SheetHeader>
-                <div className="p-4 mt-6">
-                  <div className="mb-8">
-                     <Logo />
-                  </div>
-                  <NavMenu isMobile={true} />
-                  <Button asChild className="mt-8 w-full bg-primary hover:bg-primary/90 text-primary-foreground">
-                     <a href="#contact" onClick={(e) => handleScroll(e, '#contact')}>Hire Me</a>
+            </div>
+    
+            {/* Mobile Navigation */}
+            <div className="flex items-center md:hidden">
+              <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
+                <SheetTrigger asChild>
+                  <Button variant="ghost" size="icon">
+                    <Menu className="h-6 w-6" />
+                    <span className="sr-only">Toggle navigation menu</span>
                   </Button>
-                </div>
-            </SheetContent>
-          </Sheet>
+                </SheetTrigger>
+                <SheetContent side="right">
+                  <SheetHeader className="mt-6 mb-8 border-b pb-4">
+                     <Logo />
+                     <SheetTitle className="sr-only">Main Menu</SheetTitle>
+                  </SheetHeader>
+                  <div className="flex flex-col gap-4">
+                    <NavMenu isMobile={true} />
+                    <Button asChild className="mt-4 w-full bg-primary hover:bg-primary/90 text-primary-foreground">
+                       <a href="#contact" onClick={(e) => handleLinkClick(e, '#contact')}>Hire Me</a>
+                    </Button>
+                  </div>
+                </SheetContent>
+              </Sheet>
+            </div>
         </div>
       </div>
     </header>
