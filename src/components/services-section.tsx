@@ -1,35 +1,28 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Users, Film, Palette, Target, Code, Bot } from "lucide-react";
 import React from "react";
 
 const services = [
   {
-    icon: <Users className="h-10 w-10 text-primary" />,
     title: "Social Media",
     description: "Building and managing your brand's presence across social platforms to engage your audience.",
   },
   {
-    icon: <Film className="h-10 w-10 text-primary" />,
     title: "Video Editing",
     description: "Crafting compelling video content that tells your story and captivates your audience.",
   },
   {
-    icon: <Palette className="h-10 w-10 text-primary" />,
     title: "Graphic Design",
     description: "Creating stunning visuals, from YouTube thumbnails to complete brand assets.",
   },
   {
-    icon: <Target className="h-10 w-10 text-primary" />,
     title: "Paid Ads",
     description: "Driving targeted traffic and maximizing ROI with strategic paid advertising campaigns.",
   },
   {
-    icon: <Code className="h-10 w-10 text-primary" />,
     title: "Web & App Development",
     description: "Building responsive, high-performance websites and apps with modern technologies.",
   },
   {
-    icon: <Bot className="h-10 w-10 text-primary" />,
     title: "AI & Automation",
     description: "Implementing AI agents and automation to streamline your business operations.",
   },
@@ -49,7 +42,6 @@ export function ServicesSection() {
           {services.map((service) => (
             <Card key={service.title} className="text-center flex flex-col items-center p-6 bg-background border-2 border-transparent hover:border-primary transition-all duration-300 transform hover:-translate-y-2 shadow-lg">
               <CardHeader className="p-0 pt-6">
-                {service.icon}
                 <CardTitle className="mt-4 font-headline">{service.title}</CardTitle>
               </CardHeader>
               <CardContent className="flex-1 flex items-center">
