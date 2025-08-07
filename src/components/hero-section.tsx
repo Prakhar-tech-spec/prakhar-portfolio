@@ -66,7 +66,7 @@ export function HeroSection({ personalizedMessage }: HeroSectionProps) {
             alt="Agency Owner"
             width={500}
             height={500}
-            className="rounded-full object-cover object-top z-10 shadow-2xl aspect-square"
+            className="rounded-full object-cover z-10 shadow-2xl aspect-square"
             data-ai-hint="man portrait"
           />
           <Badge className="absolute top-10 -left-8 z-20 text-lg py-2 px-4 bg-background/80 backdrop-blur border-border text-foreground shadow-lg">
