@@ -64,13 +64,13 @@ export function HeroSection({ personalizedMessage }: HeroSectionProps) {
            <Dot color="bg-blue-500" position="top-1/4 left-1/4" />
            <Dot color="bg-red-500" position="top-1/2 right-1/4" />
            <Dot color="bg-green-500" position="bottom-1/4 left-1/3" />
-           <div className="relative w-[300px] h-[300px] md:w-[500px] md:h-[500px] rounded-lg overflow-hidden z-10 shadow-2xl pt-16 md:pt-24">
+           <div className="relative w-[300px] h-[300px] md:w-[500px] md:h-[500px] rounded-lg overflow-hidden z-10 shadow-2xl">
               <Image
                 src="https://i.postimg.cc/0ymvXWWQ/apran-image-Photoroom.png"
                 alt="Agency Owner"
                 width={500}
                 height={600}
-                className="object-cover w-full h-auto md:h-[600px] -mt-16 md:-mt-24"
+                className="object-cover w-full h-auto md:h-[600px]"
                 data-ai-hint="man portrait"
                 priority
               />
