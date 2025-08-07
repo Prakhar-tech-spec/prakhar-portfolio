@@ -1,3 +1,4 @@
+
 import { Header } from '@/components/header';
 import { HeroSection } from '@/components/hero-section';
 import { ServicesSection } from '@/components/services-section';
@@ -15,7 +16,7 @@ export default async function Home() {
     <div className="flex min-h-screen w-full flex-col overflow-x-hidden bg-background text-foreground">
       <Header />
       <main className="flex-1 pt-24 md:pt-28">
-        <HeroSection personalizedMessage={message} />
+        <HeroSection />
         <ServicesSection />
         <PortfolioSection />
         <TestimonialsSection />
@@ -23,7 +24,7 @@ export default async function Home() {
       </main>
       <div className="flex justify-center py-8">
         <div className="bg-secondary text-muted-foreground px-6 py-3 rounded-full text-sm">
-          Made with 💕 by SoftServe Studios
+          Made with 💕 by <a href="https://softservestudio.framer.website/" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary">SoftServe Studios</a>
         </div>
       </div>
       <Footer />
