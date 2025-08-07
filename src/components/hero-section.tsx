@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { ArrowRight, Briefcase, Dribbble, Twitter, Instagram, Facebook, Linkedin } from 'lucide-react';
+import { ArrowRight, Briefcase, Instagram, Facebook, Linkedin } from 'lucide-react';
 import { ClientsSection } from './clients-section';
 
 interface HeroSectionProps {
@@ -48,13 +48,13 @@ export function HeroSection({ personalizedMessage }: HeroSectionProps) {
           </div>
           <div className="flex items-center gap-4 mt-4">
             <p className="text-sm text-muted-foreground">CONNECT WITH ME</p>
-            <a href="#" aria-label="Instagram" className="text-muted-foreground hover:text-primary transition-colors">
+            <a href="https://www.instagram.com/arpanigcoach?igsh=OGRuNnRyeHVqNzBr" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-muted-foreground hover:text-primary transition-colors">
               <Instagram className="h-6 w-6" />
             </a>
-            <a href="#" aria-label="Facebook" className="text-muted-foreground hover:text-primary transition-colors">
+            <a href="#hero" onClick={(e) => handleScroll(e, '#hero')} aria-label="Facebook" className="text-muted-foreground hover:text-primary transition-colors">
               <Facebook className="h-6 w-6" />
             </a>
-            <a href="#" aria-label="Linkedin" className="text-muted-foreground hover:text-primary transition-colors">
+            <a href="https://www.linkedin.com/in/arpan-dey-5369212a4/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer" aria-label="Linkedin" className="text-muted-foreground hover:text-primary transition-colors">
               <Linkedin className="h-6 w-6" />
             </a>
           </div>
