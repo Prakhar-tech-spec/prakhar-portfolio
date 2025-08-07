@@ -87,7 +87,7 @@ export function PortfolioSection() {
         </div>
 
         <div className="flex justify-center mt-12 mb-8">
-            <div className="flex flex-wrap justify-center items-center gap-2 bg-secondary p-2 rounded-full">
+            <div className="flex flex-wrap justify-center items-center gap-2 bg-secondary p-2 rounded-2xl">
                 {filterCategories.map((filter) => (
                     <Button
                         key={filter}
