@@ -30,8 +30,8 @@ export function HeroSection({ personalizedMessage }: HeroSectionProps) {
           <h1 className="text-4xl md:text-6xl font-bold font-headline tracking-tight">
             An automation to <span className="text-primary">business</span> transformation
           </h1>
-          <p className="text-lg text-muted-foreground">
-            As a passionate UX Designer I specialize in creating intuitive user-centric designs that drive engagement and elevate digital products.
+          <p className="text-lg text-muted-foreground font-bold italic">
+            Execute Growth & Automate
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Button size="lg" asChild className="bg-primary hover:bg-primary/90 text-primary-foreground">
