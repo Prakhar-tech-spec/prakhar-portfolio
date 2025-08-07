@@ -72,10 +72,10 @@ export function HeroSection({ personalizedMessage }: HeroSectionProps) {
               />
               <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-background to-transparent"></div>
            </div>
-          <Badge className="absolute top-20 -left-8 z-20 text-lg py-2 px-4 bg-background/80 backdrop-blur border-border text-foreground shadow-lg">
+          <Badge className="absolute top-20 -left-8 z-20 text-lg py-2 px-4 bg-background/80 backdrop-blur border-border text-foreground shadow-lg transition-colors hover:bg-primary/90">
             Hi, I'm Samir
           </Badge>
-          <Badge variant="outline" className="absolute bottom-10 -right-8 z-20 text-lg py-2 px-4 bg-background/80 backdrop-blur border-border text-foreground shadow-lg flex items-center gap-2">
+          <Badge variant="outline" className="absolute bottom-10 -right-8 z-20 text-lg py-2 px-4 bg-background/80 backdrop-blur border-border text-foreground shadow-lg flex items-center gap-2 transition-colors hover:bg-primary/90">
             <Briefcase className="h-5 w-5 text-primary"/>
             13 Years of Experience
           </Badge>
