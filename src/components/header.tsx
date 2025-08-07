@@ -109,7 +109,7 @@ export function Header() {
             </SheetTrigger>
             <SheetContent side="right">
               <SheetHeader>
-                <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
+                 <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
               </SheetHeader>
                 <div className="p-4 mt-6">
                   <div className="mb-8">
