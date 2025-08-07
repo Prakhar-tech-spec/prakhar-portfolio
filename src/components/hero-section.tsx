@@ -26,7 +26,7 @@ export function HeroSection({ personalizedMessage }: HeroSectionProps) {
   return (
     <section id="hero" className="relative overflow-hidden bg-grid-white/[0.05]">
       <div className="container grid lg:grid-cols-2 gap-10 items-center py-20 md:py-32">
-        <div className="flex flex-col items-start gap-6">
+        <div className="flex flex-col items-start gap-6 -mt-12">
           <h1 className="text-4xl md:text-6xl font-bold font-headline tracking-tight">
             An automation to <span className="text-primary">business</span> transformation
           </h1>
@@ -76,7 +76,6 @@ export function HeroSection({ personalizedMessage }: HeroSectionProps) {
             <Badge className="relative text-lg py-2 px-4 bg-primary text-primary-foreground shadow-lg transition-colors hover:bg-primary/90">
               Hi, I'm Arpan
             </Badge>
-            <div className="absolute bottom-[-7px] right-4 w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-t-[8px] border-t-primary"></div>
           </div>
           <Badge variant="outline" className="absolute bottom-10 -right-4 z-20 text-lg py-2 px-4 bg-background/80 backdrop-blur border-border text-foreground shadow-lg flex items-center gap-2 transition-colors hover:bg-primary/90">
             <Briefcase className="h-5 w-5 text-primary"/>
