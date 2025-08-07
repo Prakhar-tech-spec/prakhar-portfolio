@@ -76,7 +76,7 @@ export function HeroSection({ personalizedMessage }: HeroSectionProps) {
             <Badge className="relative text-lg py-2 px-4 bg-primary text-primary-foreground shadow-lg transition-colors hover:bg-primary/90">
               Hi, I'm Arpan
             </Badge>
-            <div className="absolute bottom-[-8px] right-2 w-0 h-0 border-l-[10px] border-l-transparent border-t-[10px] border-t-primary"></div>
+            <div className="absolute bottom-[-7px] left-4 w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-t-[8px] border-t-primary"></div>
           </div>
           <Badge variant="outline" className="absolute bottom-10 -right-4 z-20 text-lg py-2 px-4 bg-background/80 backdrop-blur border-border text-foreground shadow-lg flex items-center gap-2 transition-colors hover:bg-primary/90">
             <Briefcase className="h-5 w-5 text-primary"/>
