@@ -61,7 +61,7 @@ export function HeroSection({ personalizedMessage }: HeroSectionProps) {
            <Dot color="bg-blue-500" position="top-1/4 left-1/4" />
            <Dot color="bg-red-500" position="top-1/2 right-1/4" />
            <Dot color="bg-green-500" position="bottom-1/4 left-1/3" />
-           <div className="w-[500px] h-[500px] rounded-lg overflow-hidden z-10 shadow-2xl pt-20">
+           <div className="relative w-[500px] h-[500px] rounded-lg overflow-hidden z-10 shadow-2xl pt-20">
               <Image
                 src="https://i.postimg.cc/0ymvXWWQ/apran-image-Photoroom.png"
                 alt="Agency Owner"
@@ -70,6 +70,7 @@ export function HeroSection({ personalizedMessage }: HeroSectionProps) {
                 className="object-cover w-full h-[600px] -mt-20"
                 data-ai-hint="man portrait"
               />
+              <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-background to-transparent"></div>
            </div>
           <Badge className="absolute top-20 -left-8 z-20 text-lg py-2 px-4 bg-background/80 backdrop-blur border-border text-foreground shadow-lg">
             Hi, I'm Samir
