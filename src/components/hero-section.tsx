@@ -38,7 +38,7 @@ export function HeroSection({ personalizedMessage }: HeroSectionProps) {
           </p>
           <div className="flex flex-row justify-center lg:justify-start gap-4">
             <Button size="lg" asChild className="bg-primary hover:bg-primary/90 text-primary-foreground">
-              <a href="#contact" onClick={(e) => handleScroll(e, '#contact')}>Let's Talk</a>
+              <a href="https://api.whatsapp.com/send?phone=917029757375&text=Hi!%20I%E2%80%99m%20interested%20in%20your%20done-for-you%20creative%20and%20growth%20services.%20Can%20we%20connect%20to%20discuss%20what%20might%20be%20the%20best%20fit%3F" target="_blank" rel="noopener noreferrer">Let's Talk</a>
             </Button>
             <Button size="lg" variant="link" asChild className="text-foreground">
               <a href="#portfolio" onClick={(e) => handleScroll(e, '#portfolio')}>
