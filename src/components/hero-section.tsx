@@ -28,7 +28,7 @@ export function HeroSection({ personalizedMessage }: HeroSectionProps) {
       <div className="container grid lg:grid-cols-2 gap-10 items-center py-20 md:py-32">
         <div className="flex flex-col items-start gap-6">
           <h1 className="text-4xl md:text-6xl font-bold font-headline tracking-tight">
-            Crafting Seamless <span className="text-primary">Digital</span> Experiences
+            An automation to <span className="text-primary">business</span> transformation
           </h1>
           <p className="text-lg text-muted-foreground">
             As a passionate UX Designer I specialize in creating intuitive user-centric designs that drive engagement and elevate digital products.
