@@ -69,7 +69,7 @@ export function ContactSection() {
           <p className="text-lg text-muted-foreground">
             Have a project in mind or just want to say hello? Fill out the form or use the contact information below. We'd love to hear from you.
           </p>
-          <Button asChild className="w-full" size="lg">
+          <Button asChild className="w-full bg-blue-500 hover:bg-blue-600 text-white" size="lg">
             <a href="https://calendly.com/arpanadventure/30min?month=2025-08" target="_blank" rel="noopener noreferrer">
               <CalendarDays className="mr-2 h-5 w-5" />
               Book a Free Strategy Call
