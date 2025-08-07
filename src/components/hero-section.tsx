@@ -26,7 +26,7 @@ export function HeroSection({ personalizedMessage }: HeroSectionProps) {
   return (
     <section id="hero" className="relative overflow-hidden bg-grid-white/[0.05]">
       <div className="container grid lg:grid-cols-2 gap-10 items-center py-20 md:py-32">
-        <div className="flex flex-col items-start gap-6">
+        <div className="flex flex-col items-start gap-6 lg:order-1 order-2">
           <h1 className="text-4xl md:text-6xl font-bold font-headline tracking-tight">
             An automation to <span className="text-primary">business</span> transformation
           </h1>
@@ -56,7 +56,7 @@ export function HeroSection({ personalizedMessage }: HeroSectionProps) {
             </a>
           </div>
         </div>
-        <div className="relative flex justify-center items-center mt-12 lg:mt-0">
+        <div className="relative flex justify-center items-center mt-12 lg:mt-0 lg:order-2 order-1">
           <div className="absolute w-full h-full max-w-[500px] max-h-[500px] bg-primary/10 rounded-full blur-3xl z-0"></div>
            <Dot color="bg-blue-500" position="top-1/4 left-1/4" />
            <Dot color="bg-red-500" position="top-1/2 right-1/4" />
