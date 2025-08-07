@@ -98,7 +98,7 @@ export function Header() {
 
   return (
     <header className="fixed top-4 left-0 right-0 z-50 flex justify-center">
-      <div className="container mx-4 md:mx-6 flex h-16 items-center justify-between rounded-full border-2 border-primary bg-background/80 px-6 backdrop-blur-lg supports-[backdrop-filter]:bg-background/60">
+      <div className="container mx-4 md:mx-6 flex h-16 items-center justify-between rounded-full border border-border/40 bg-background/80 px-6 backdrop-blur-lg supports-[backdrop-filter]:bg-background/60">
         <div className="flex items-center">
            <Logo />
         </div>
@@ -119,8 +119,8 @@ export function Header() {
               </Button>
             </SheetTrigger>
             <SheetContent side="right">
-              <SheetHeader className="sr-only">
-                <SheetTitle>Navigation Menu</SheetTitle>
+              <SheetHeader>
+                <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
               </SheetHeader>
                 <div className="p-4 mt-6">
                   <div className="mb-8">
