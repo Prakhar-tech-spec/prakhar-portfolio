@@ -57,7 +57,7 @@ export function HeroSection({ personalizedMessage }: HeroSectionProps) {
           </div>
         </div>
         <div className="relative flex justify-center items-center mt-12 lg:mt-0">
-          <div className="absolute w-full h-full max-w-[500px] max-h-[500px] bg-primary/10 rounded-full blur-3xl z-0"></div>
+          <div className="absolute w-full h-full max-w-[500px] max-h-[500px] bg-primary/10 rounded-lg blur-3xl z-0"></div>
            <Dot color="bg-blue-500" position="top-1/4 left-1/4" />
            <Dot color="bg-red-500" position="top-1/2 right-1/4" />
            <Dot color="bg-green-500" position="bottom-1/4 left-1/3" />
@@ -66,7 +66,7 @@ export function HeroSection({ personalizedMessage }: HeroSectionProps) {
             alt="Agency Owner"
             width={500}
             height={500}
-            className="rounded-full object-cover z-10 shadow-2xl aspect-square"
+            className="rounded-lg object-cover z-10 shadow-2xl aspect-square"
             data-ai-hint="man portrait"
           />
           <Badge className="absolute top-10 -left-8 z-20 text-lg py-2 px-4 bg-background/80 backdrop-blur border-border text-foreground shadow-lg">
