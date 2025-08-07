@@ -12,7 +12,7 @@ export default async function Home() {
   const { message } = { message: 'Welcome to Corelk Digital Agency' };
   
   return (
-    <div className="flex min-h-screen flex-col bg-background text-foreground">
+    <div className="flex min-h-screen w-full flex-col overflow-x-hidden bg-background text-foreground">
       <Header />
       <main className="flex-1 pt-16">
         <HeroSection personalizedMessage={message} />
