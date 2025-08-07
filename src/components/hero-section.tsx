@@ -26,7 +26,7 @@ export function HeroSection({ personalizedMessage }: HeroSectionProps) {
   return (
     <section id="hero" className="relative overflow-hidden bg-grid-white/[0.05]">
       <div className="container grid lg:grid-cols-2 gap-10 items-center py-20 md:py-32">
-        <div className="flex flex-col items-start gap-6 -mt-12">
+        <div className="flex flex-col items-start gap-6 -mt-24">
           <h1 className="text-4xl md:text-6xl font-bold font-headline tracking-tight">
             An automation to <span className="text-primary">business</span> transformation
           </h1>
