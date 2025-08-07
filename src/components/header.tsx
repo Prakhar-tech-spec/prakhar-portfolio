@@ -92,7 +92,7 @@ export function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
       <div className={cn(
-          "mx-auto flex h-16 max-w-7xl items-center justify-between transition-all duration-300 px-4",
+          "mx-auto flex h-20 max-w-7xl items-center justify-between transition-all duration-300 px-4",
           isScrolled ? "mt-2" : "mt-0"
       )}>
         <div className={cn(
