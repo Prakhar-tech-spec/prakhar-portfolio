@@ -1,9 +1,9 @@
 
 const stats = [
-  { value: "500%", label: "ROI Increased" },
-  { value: "300%", label: "Conversion Rate" },
-  { value: "10k+", label: "New Leads" },
-  { value: "2.5M+", label: "Impressions" },
+  { value: "50M+", label: "Video Views" },
+  { value: "50K+", label: "Social Followers Gained" },
+  { value: "20K+", label: "YouTube Subscribers" },
+  { value: "2K+", label: "Organic Leads Generated" },
 ];
 
 export function ClientsSection() {
