@@ -56,7 +56,7 @@ export function HeroSection({ personalizedMessage }: HeroSectionProps) {
           width={500}
           height={500}
           className="rounded-full object-cover z-10 shadow-2xl aspect-square"
-          data-ai-hint="portrait man"
+          data-ai-hint="man plaid shirt"
         />
         <Badge className="absolute top-10 left-0 z-20 text-lg py-2 px-4 bg-background/80 backdrop-blur border-primary text-primary shadow-lg">
           Hi, I'm Samir
