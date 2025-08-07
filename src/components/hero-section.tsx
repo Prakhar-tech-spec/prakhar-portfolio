@@ -25,7 +25,7 @@ export function HeroSection({ personalizedMessage }: HeroSectionProps) {
   };
 
   return (
-    <section id="hero" className="relative overflow-hidden bg-grid-white/[0.05] pt-24 md:pt-32">
+    <section id="hero" className="relative overflow-hidden bg-grid-white/[0.05]">
       <div className="container grid lg:grid-cols-2 gap-10 items-center py-12 md:py-20">
         <div className="flex flex-col items-center lg:items-start gap-6 text-center lg:text-left">
           <h1 className="text-4xl md:text-6xl font-bold font-headline tracking-tight">
