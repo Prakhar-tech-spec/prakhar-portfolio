@@ -17,7 +17,7 @@ export function Footer() {
                 <ADVENTURELogo />
             </div>
             <p className="text-sm text-muted-foreground">
-                &copy; {new Date().getFullYear()} Corelk Digital Agency. All rights reserved.
+                &copy; {new Date().getFullYear()} AD VENTURE MARKETING. All rights reserved.
             </p>
             <div className="flex items-center gap-4">
                 <a href="https://www.instagram.com/arpanigcoach?igsh=OGRuNnRyeHVqNzBr" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-muted-foreground hover:text-primary transition-colors">
