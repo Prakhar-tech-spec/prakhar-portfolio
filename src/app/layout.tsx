@@ -1,11 +1,23 @@
 import type {Metadata} from 'next';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster"
+import { Inter, Lexend } from 'next/font/google'
 
 export const metadata: Metadata = {
   title: 'Corelk Digital Agency',
   description: 'Crafting Seamless Digital Experiences',
 };
+
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+})
+
+const lexend = Lexend({
+  subsets: ['latin'],
+  variable: '--font-lexend',
+})
+
 
 export default function RootLayout({
   children,
@@ -14,12 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark scroll-smooth">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-        <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet"></link>
-      </head>
-      <body className="font-body antialiased">
+      <body className={`${inter.variable} ${lexend.variable} font-body antialiased`}>
         {children}
         <Toaster />
       </body>
