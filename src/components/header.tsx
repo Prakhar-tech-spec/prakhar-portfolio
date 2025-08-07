@@ -87,8 +87,8 @@ export function Header() {
   );
 
   return (
-    <header className="fixed top-4 left-0 right-0 z-50 flex justify-center">
-      <div className="container mx-4 md:mx-6 flex h-16 items-center justify-between rounded-full border border-border/40 bg-background/80 px-6 backdrop-blur-lg supports-[backdrop-filter]:bg-background/60">
+    <header className="fixed top-0 left-0 right-0 z-50 p-4">
+      <div className="container flex h-16 items-center justify-between rounded-full border border-border/40 bg-background/80 px-6 backdrop-blur-lg supports-[backdrop-filter]:bg-background/60">
         <div className="flex items-center">
            <Logo />
         </div>
