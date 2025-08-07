@@ -1,31 +1,45 @@
 "use client";
 
-import Image from "next/image";
-import { Card, CardContent } from "@/components/ui/card";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
 
 const testimonials = [
   {
     quote: "Corelk transformed our online presence. Their design sense is impeccable, and the results speak for themselves. Highly recommended!",
     name: "Jane Doe",
-    title: "CEO, Tech Solutions Inc.",
-    avatar: "https://placehold.co/100x100.png",
+    designation: "CEO, Tech Solutions Inc.",
+    src: "https://placehold.co/500x500.png",
     aiHint: "woman portrait"
   },
   {
     quote: "Working with this team was a pleasure. They are true professionals who understand user needs and deliver outstanding web experiences.",
     name: "John Smith",
-    title: "Marketing Director, Creative Co.",
-    avatar: "https://placehold.co/100x100.png",
+    designation: "Marketing Director, Creative Co.",
+    src: "https://placehold.co/500x500.png",
     aiHint: "man portrait"
   },
   {
     quote: "The new branding and website have received amazing feedback. Our user engagement has skyrocketed since the launch.",
     name: "Emily White",
-    title: "Founder, Health & Wellness Hub",
-    avatar: "https://placehold.co/100x100.png",
+    designation: "Founder, Health & Wellness Hub",
+    src: "https://placehold.co/500x500.png",
     aiHint: "woman smiling"
   },
+  {
+      quote:
+        "Outstanding support and robust features. It's rare to find a product that delivers on all its promises.",
+      name: "James Kim",
+      designation: "Engineering Lead at DataPro",
+      src: "https://placehold.co/500x500.png",
+      aiHint: "man portrait smiling"
+    },
+    {
+      quote:
+        "The scalability and performance have been game-changing for our organization. Highly recommend to any growing business.",
+      name: "Lisa Thompson",
+      designation: "VP of Technology at FutureNet",
+      src: "https://placehold.co/500x500.png",
+      aiHint: "woman portrait professional"
+    },
 ];
 
 export function TestimonialsSection() {
@@ -38,43 +52,7 @@ export function TestimonialsSection() {
             We are proud to have worked with some amazing clients. Here's what they think of us.
           </p>
         </div>
-        <Carousel
-          opts={{
-            align: "start",
-            loop: true,
-          }}
-          className="w-full max-w-4xl mx-auto mt-12"
-        >
-          <CarouselContent>
-            {testimonials.map((testimonial, index) => (
-              <CarouselItem key={index} className="md:basis-1/2">
-                <div className="p-1">
-                  <Card className="h-full bg-background">
-                    <CardContent className="flex flex-col items-center text-center justify-center p-8 gap-6 h-full">
-                      <blockquote className="text-lg italic flex-1">"{testimonial.quote}"</blockquote>
-                      <div className="flex flex-col items-center gap-2 mt-auto">
-                        <Image
-                          src={testimonial.avatar}
-                          alt={testimonial.name}
-                          width={60}
-                          height={60}
-                          className="rounded-full"
-                           data-ai-hint={testimonial.aiHint}
-                        />
-                         <div>
-                          <p className="font-semibold">{testimonial.name}</p>
-                          <p className="text-sm text-muted-foreground">{testimonial.title}</p>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselPrevious className="hidden sm:flex" />
-          <CarouselNext className="hidden sm:flex" />
-        </Carousel>
+        <AnimatedTestimonials testimonials={testimonials} />
       </div>
     </section>
   );
