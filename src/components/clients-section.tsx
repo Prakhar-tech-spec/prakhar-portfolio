@@ -1,10 +1,9 @@
-import { Asterisk, Bot, Heart, Sparkles } from 'lucide-react';
 
-const clients = [
-  { name: 'Logoipsum 1', icon: <Asterisk className="h-8 w-8 text-muted-foreground" /> },
-  { name: 'Logoipsum 2', icon: <Sparkles className="h-8 w-8 text-muted-foreground" /> },
-  { name: 'Logoipsum 3', icon: <Heart className="h-8 w-8 text-muted-foreground" /> },
-  { name: 'Logoipsum 4', icon: <Bot className="h-8 w-8 text-muted-foreground" /> },
+const stats = [
+  { value: "500%", label: "ROI Increased" },
+  { value: "300%", label: "Conversion Rate" },
+  { value: "10k+", label: "New Leads" },
+  { value: "2.5M+", label: "Impressions" },
 ];
 
 export function ClientsSection() {
@@ -12,18 +11,18 @@ export function ClientsSection() {
     <section id="clients" className="py-12 bg-secondary">
       <div className="container">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-            <div className='flex-shrink-0'>
-                <h3 className="font-headline text-xl font-semibold">My recent Client</h3>
-                <p className="text-muted-foreground">Collaborations That Brought Ideas to Life</p>
-            </div>
-            <div className="w-full grid grid-cols-2 md:grid-cols-4 gap-8">
-            {clients.map((client) => (
-                <div key={client.name} className="flex items-center justify-center gap-2">
-                {client.icon}
-                <span className="text-lg font-semibold text-muted-foreground">{client.name}</span>
-                </div>
+          <div className="flex-shrink-0 text-center md:text-left">
+            <h3 className="font-headline text-xl font-semibold">Numbers Don’t Lie</h3>
+            <p className="text-muted-foreground">Here are some of the results we've delivered.</p>
+          </div>
+          <div className="w-full grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            {stats.map((stat) => (
+              <div key={stat.label}>
+                <p className="text-3xl md:text-4xl font-bold text-primary">{stat.value}</p>
+                <p className="text-sm text-muted-foreground">{stat.label}</p>
+              </div>
             ))}
-            </div>
+          </div>
         </div>
       </div>
     </section>
