@@ -62,7 +62,7 @@ export function HeroSection({ personalizedMessage }: HeroSectionProps) {
            <Dot color="bg-red-500" position="top-1/2 right-1/4" />
            <Dot color="bg-green-500" position="bottom-1/4 left-1/3" />
           <Image
-            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=500&h=500&auto=format&fit=crop"
+            src="https://i.postimg.cc/0ymvXWWQ/apran-image-Photoroom.png"
             alt="Agency Owner"
             width={500}
             height={500}
