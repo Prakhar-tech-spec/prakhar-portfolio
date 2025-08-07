@@ -105,11 +105,13 @@ export function Header() {
   }, [isMenuOpen]);
 
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, href: string) => {
-    e.preventDefault();
-    const targetId = href.substring(1);
-    const targetElement = document.getElementById(targetId);
-    if (targetElement) {
-        targetElement.scrollIntoView({ behavior: 'smooth' });
+    if (href.startsWith('#')) {
+      e.preventDefault();
+      const targetId = href.substring(1);
+      const targetElement = document.getElementById(targetId);
+      if (targetElement) {
+          targetElement.scrollIntoView({ behavior: 'smooth' });
+      }
     }
     setActiveLink(href);
     setIsMenuOpen(false);
@@ -156,7 +158,7 @@ export function Header() {
             <div className="hidden md:flex items-center gap-4">
               <NavMenu />
               <Button asChild size="sm" className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full">
-                <a href="#contact" onClick={(e) => handleLinkClick(e, '#contact')}>Hire Me</a>
+                <a href="https://calendly.com/arpanadventure/30min" target="_blank" rel="noopener noreferrer">Book a Call</a>
               </Button>
             </div>
       
@@ -192,6 +194,9 @@ export function Header() {
                             {link.label}
                         </motion.a>
                     ))}
+                     <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full mt-4">
+                        <a href="https://calendly.com/arpanadventure/30min" target="_blank" rel="noopener noreferrer">Book a Call</a>
+                    </Button>
                 </nav>
             </motion.div>
         )}
