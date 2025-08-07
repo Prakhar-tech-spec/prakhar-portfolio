@@ -8,7 +8,8 @@ import { Footer } from '@/components/footer';
 import { personalizeWelcomeMessage } from '@/ai/flows/personalize-welcome-message';
 
 export default async function Home() {
-  const { message } = await personalizeWelcomeMessage({ location: 'your region' }).catch(() => ({ message: 'Welcome to Corelk Digital Agency' }));
+  // A personalized message can be generated here, but we will use a fallback for now.
+  const { message } = { message: 'Welcome to Corelk Digital Agency' };
   
   return (
     <div className="flex min-h-screen flex-col bg-background text-foreground">

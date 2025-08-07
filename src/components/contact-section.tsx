@@ -63,21 +63,21 @@ export function ContactSection() {
             Have a project in mind or just want to say hello? Fill out the form or use the contact information below. We'd love to hear from you.
           </p>
           <Card className="p-6 flex items-start gap-4 bg-secondary">
-            <Mail className="h-6 w-6 text-primary mt-1" />
+            <Mail className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
             <div>
                 <h3 className="font-semibold">Email</h3>
-                <p className="text-muted-foreground">hello@corelk.agency</p>
+                <p className="text-muted-foreground break-all">hello@corelk.agency</p>
             </div>
           </Card>
            <Card className="p-6 flex items-start gap-4 bg-secondary">
-            <Phone className="h-6 w-6 text-primary mt-1" />
+            <Phone className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
             <div>
                 <h3 className="font-semibold">Phone</h3>
                 <p className="text-muted-foreground">+1 (555) 123-4567</p>
             </div>
           </Card>
         </div>
-        <Card className="p-8">
+        <Card className="p-6 md:p-8">
             <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                 <FormField

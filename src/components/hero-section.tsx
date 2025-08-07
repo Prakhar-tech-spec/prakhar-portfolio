@@ -11,7 +11,7 @@ interface HeroSectionProps {
 }
 
 const Dot = ({ color, position }: { color: string, position: string }) => (
-  <div className={`absolute ${position} w-3 h-3 rounded-full ${color} opacity-50`}></div>
+  <div className={`absolute ${position} w-2 h-2 md:w-3 md:h-3 rounded-full ${color} opacity-50`}></div>
 );
 
 export function HeroSection({ personalizedMessage }: HeroSectionProps) {
@@ -24,14 +24,17 @@ export function HeroSection({ personalizedMessage }: HeroSectionProps) {
   };
 
   return (
-    <section id="hero" className="relative overflow-hidden bg-grid-white/[0.05] pt-16 md:pt-24">
-      <div className="container grid lg:grid-cols-2 gap-10 items-center py-20 md:py-32">
-        <div className="flex flex-col items-start gap-6 -mt-24">
+    <section id="hero" className="relative overflow-hidden bg-grid-white/[0.05] pt-24 md:pt-32">
+      <div className="container grid lg:grid-cols-2 gap-10 items-center py-12 md:py-20">
+        <div className="flex flex-col items-center lg:items-start gap-6 text-center lg:text-left">
           <h1 className="text-4xl md:text-6xl font-bold font-headline tracking-tight">
             An automation to <span className="text-primary">business</span> transformation
           </h1>
           <p className="text-lg text-muted-foreground font-bold italic">
             Execute Growth & Automate
+          </p>
+          <p className="text-base md:text-lg text-muted-foreground max-w-md">
+            Smart strategy. Killer creative. AI that works while you sleep.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Button size="lg" asChild className="bg-primary hover:bg-primary/90 text-primary-foreground">
@@ -57,28 +60,29 @@ export function HeroSection({ personalizedMessage }: HeroSectionProps) {
           </div>
         </div>
         <div className="relative flex justify-center items-center mt-12 lg:mt-0">
-          <div className="absolute w-full h-full max-w-[500px] max-h-[500px] bg-primary/10 rounded-lg blur-3xl z-0"></div>
+          <div className="absolute w-full h-full max-w-[300px] max-h-[300px] md:max-w-[500px] md:max-h-[500px] bg-primary/10 rounded-lg blur-3xl z-0"></div>
            <Dot color="bg-blue-500" position="top-1/4 left-1/4" />
            <Dot color="bg-red-500" position="top-1/2 right-1/4" />
            <Dot color="bg-green-500" position="bottom-1/4 left-1/3" />
-           <div className="relative w-[500px] h-[500px] rounded-lg overflow-hidden z-10 shadow-2xl pt-24">
+           <div className="relative w-[300px] h-[300px] md:w-[500px] md:h-[500px] rounded-lg overflow-hidden z-10 shadow-2xl pt-16 md:pt-24">
               <Image
                 src="https://i.postimg.cc/0ymvXWWQ/apran-image-Photoroom.png"
                 alt="Agency Owner"
                 width={500}
                 height={600}
-                className="object-cover w-full h-[600px] -mt-24"
+                className="object-cover w-full h-auto md:h-[600px] -mt-16 md:-mt-24"
                 data-ai-hint="man portrait"
+                priority
               />
               <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-background to-transparent"></div>
            </div>
-          <div className="absolute top-20 -left-8 z-20 animate-float">
-            <Badge className="relative text-lg py-2 px-4 bg-primary text-primary-foreground shadow-lg transition-colors hover:bg-primary/90">
+          <div className="absolute top-10 -left-4 md:top-20 md:-left-8 z-20 animate-float">
+            <Badge className="relative text-base md:text-lg py-2 px-4 bg-primary text-primary-foreground shadow-lg transition-colors hover:bg-primary/90">
               Hi, I'm Arpan
             </Badge>
           </div>
-          <Badge variant="outline" className="absolute bottom-10 -right-4 z-20 text-lg py-2 px-4 bg-background/80 backdrop-blur border-border text-foreground shadow-lg flex items-center gap-2 transition-colors hover:bg-primary/90 animate-float" style={{ animationDelay: '1.5s' }}>
-            <Briefcase className="h-5 w-5 text-primary"/>
+          <Badge variant="outline" className="absolute bottom-8 -right-4 md:bottom-10 md:-right-4 z-20 text-sm md:text-lg py-2 px-4 bg-background/80 backdrop-blur border-border text-foreground shadow-lg flex items-center gap-2 transition-colors hover:bg-primary/90 animate-float" style={{ animationDelay: '1.5s' }}>
+            <Briefcase className="h-4 w-4 md:h-5 md:w-5 text-primary"/>
             13 Years of Experience
           </Badge>
         </div>

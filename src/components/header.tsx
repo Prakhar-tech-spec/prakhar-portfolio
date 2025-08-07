@@ -72,7 +72,10 @@ export function Header() {
   );
 
   const NavMenu = ({ isMobile = false }) => (
-    <nav className={isMobile ? "flex flex-col items-start gap-4 p-4 text-lg" : "hidden md:flex items-center gap-6 text-sm"}>
+    <nav className={cn(
+      "items-center gap-6 text-sm",
+      isMobile ? "flex flex-col items-start gap-4 p-4 text-lg" : "hidden md:flex"
+    )}>
       {navLinks.map((link) => (
          <a
           key={link.href}
@@ -94,7 +97,7 @@ export function Header() {
 
   return (
     <header className="fixed top-4 left-0 right-0 z-50 flex justify-center">
-      <div className="container mx-4 md:mx-6 flex h-16 items-center justify-between rounded-full border border-border bg-background/80 px-6 backdrop-blur-lg supports-[backdrop-filter]:bg-background/60">
+      <div className="container mx-4 md:mx-6 flex h-16 items-center justify-between rounded-full border border-border/40 bg-background/80 px-6 backdrop-blur-lg supports-[backdrop-filter]:bg-background/60">
         <div className="flex items-center">
            <Logo />
         </div>
