@@ -14,13 +14,18 @@ export default async function Home() {
   return (
     <div className="flex min-h-screen w-full flex-col overflow-x-hidden bg-background text-foreground">
       <Header />
-      <main className="flex-1 pt-20">
+      <main className="flex-1 pt-24 md:pt-28">
         <HeroSection personalizedMessage={message} />
         <ServicesSection />
         <PortfolioSection />
         <TestimonialsSection />
         <ContactSection />
       </main>
+      <div className="flex justify-center py-8">
+        <div className="bg-secondary text-muted-foreground px-6 py-3 rounded-full text-sm">
+          Made with 💕 by SoftServe Studios
+        </div>
+      </div>
       <Footer />
     </div>
   );
