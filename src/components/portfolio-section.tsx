@@ -1,37 +1,81 @@
+"use client";
+
 import Image from "next/image";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight } from "lucide-react";
 import { Button } from "./ui/button";
+import React, { useState } from "react";
+import { cn } from "@/lib/utils";
 
 const portfolioItems = [
   {
     title: "E-commerce Platform Redesign",
-    category: "UX/UI Design",
+    category: "Web & App",
     image: "https://placehold.co/600x400.png",
     aiHint: "website screenshot"
   },
   {
     title: "SaaS Dashboard Development",
-    category: "Web Development",
+    category: "Web & App",
     image: "https://placehold.co/600x400.png",
     aiHint: "dashboard analytics"
   },
   {
-    title: "Corporate Branding for Tech Startup",
-    category: "Branding",
+    title: "Promotional Video for New Product",
+    category: "Video Editing",
     image: "https://placehold.co/600x400.png",
-    aiHint: "logo design"
+    aiHint: "product video"
   },
   {
-    title: "Mobile App for Fintech Company",
-    category: "UX/UI Design",
+    title: "Social Media Campaign Visuals",
+    category: "Social Media",
     image: "https://placehold.co/600x400.png",
-    aiHint: "mobile app"
+    aiHint: "social media post"
+  },
+  {
+    title: "YouTube Channel Thumbnail Pack",
+    category: "Graphics & Thumbnails",
+    image: "https://placehold.co/600x400.png",
+    aiHint: "youtube thumbnail"
+  },
+  {
+    title: "AI Chatbot for Customer Service",
+    category: "AI Agents",
+    image: "https://placehold.co/600x400.png",
+    aiHint: "chatbot interface"
+  },
+  {
+    title: "Google Ads Campaign Management",
+    category: "Paid Ads",
+    image: "https://placehold.co/600x400.png",
+    aiHint: "advertising dashboard"
+  },
+  {
+    title: "Instagram Content Creation",
+    category: "Social Media",
+    image: "https://placehold.co/600x400.png",
+    aiHint: "instagram post"
   },
 ];
 
+const filterCategories = [
+  "All Work",
+  "Video Editing",
+  "Graphics & Thumbnails",
+  "Web & App",
+  "Paid Ads",
+  "Social Media",
+  "AI Agents"
+];
+
 export function PortfolioSection() {
+  const [activeFilter, setActiveFilter] = useState("All Work");
+
+  const filteredItems = activeFilter === "All Work"
+    ? portfolioItems
+    : portfolioItems.filter((item) => item.category === activeFilter);
+
   return (
     <section id="portfolio" className="py-20 md:py-32">
       <div className="container">
@@ -41,8 +85,27 @@ export function PortfolioSection() {
             Take a look at some of our recent projects that showcase our skills and creativity.
           </p>
         </div>
+
+        <div className="flex justify-center mt-12 mb-8">
+            <div className="flex items-center gap-2 bg-secondary p-1 rounded-full">
+                {filterCategories.map((filter) => (
+                    <Button
+                        key={filter}
+                        variant="ghost"
+                        onClick={() => setActiveFilter(filter)}
+                        className={cn(
+                            "rounded-full px-4 py-2 text-sm transition-colors",
+                            activeFilter === filter ? 'bg-background text-foreground hover:bg-background/90' : 'text-muted-foreground hover:text-foreground'
+                        )}
+                    >
+                        {filter}
+                    </Button>
+                ))}
+            </div>
+        </div>
+        
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
-          {portfolioItems.map((item) => (
+          {filteredItems.map((item) => (
             <Card key={item.title} className="overflow-hidden group">
               <CardHeader className="p-0">
                 <Image
