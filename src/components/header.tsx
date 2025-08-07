@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useState, useEffect } from 'react';
@@ -93,17 +92,17 @@ export function Header() {
            <Logo />
         </div>
         
-        <div className="hidden md:flex flex-1 justify-center items-center">
+        <div className="hidden md:flex items-center gap-6">
           <NavMenu />
+          <Button asChild className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full">
+            <a href="#contact" onClick={(e) => handleScroll(e, '#contact')}>Hire Me</a>
+          </Button>
         </div>
 
-        <div className="flex items-center gap-4">
-           <Button asChild className="hidden md:flex bg-primary hover:bg-primary/90 text-primary-foreground rounded-full">
-             <a href="#contact" onClick={(e) => handleScroll(e, '#contact')}>Hire Me</a>
-           </Button>
+        <div className="flex items-center md:hidden">
            <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="md:hidden">
+              <Button variant="ghost" size="icon">
                 <Menu className="h-6 w-6" />
                 <span className="sr-only">Toggle navigation menu</span>
               </Button>
