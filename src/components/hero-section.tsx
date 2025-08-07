@@ -51,12 +51,12 @@ export function HeroSection({ personalizedMessage }: HeroSectionProps) {
       <div className="relative flex justify-center items-center mt-12 lg:mt-0">
         <div className="absolute w-full h-full max-w-[500px] max-h-[500px] bg-primary/10 rounded-full blur-3xl z-0"></div>
         <Image
-          src="https://cdn.jumpshare.com/v/FUGwSka9LUOFMNa8Ovz3/259351.jpg"
+          src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=500&h=500&auto=format&fit=crop"
           alt="Agency Owner"
           width={500}
           height={500}
           className="rounded-full object-cover z-10 shadow-2xl aspect-square"
-          data-ai-hint="man plaid shirt"
+          data-ai-hint="man portrait"
         />
         <Badge className="absolute top-10 left-0 z-20 text-lg py-2 px-4 bg-background/80 backdrop-blur border-primary text-primary shadow-lg">
           Hi, I'm Samir
