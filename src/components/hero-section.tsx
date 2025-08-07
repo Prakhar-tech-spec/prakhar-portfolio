@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { ArrowRight, Briefcase, Dribbble, Twitter } from 'lucide-react';
+import { ArrowRight, Briefcase, Dribbble, Twitter, Instagram, Facebook, Linkedin } from 'lucide-react';
 import { ClientsSection } from './clients-section';
 
 interface HeroSectionProps {
@@ -48,14 +48,14 @@ export function HeroSection({ personalizedMessage }: HeroSectionProps) {
           </div>
           <div className="flex items-center gap-4 mt-4">
             <p className="text-sm text-muted-foreground">CONNECT WITH ME</p>
-            <a href="#" aria-label="Briefcase" className="text-muted-foreground hover:text-primary transition-colors">
-              <Briefcase className="h-6 w-6" />
+            <a href="#" aria-label="Instagram" className="text-muted-foreground hover:text-primary transition-colors">
+              <Instagram className="h-6 w-6" />
             </a>
-            <a href="#" aria-label="Dribbble" className="text-muted-foreground hover:text-primary transition-colors">
-              <Dribbble className="h-6 w-6" />
+            <a href="#" aria-label="Facebook" className="text-muted-foreground hover:text-primary transition-colors">
+              <Facebook className="h-6 w-6" />
             </a>
-            <a href="#" aria-label="Twitter" className="text-muted-foreground hover:text-primary transition-colors">
-              <Twitter className="h-6 w-6" />
+            <a href="#" aria-label="Linkedin" className="text-muted-foreground hover:text-primary transition-colors">
+              <Linkedin className="h-6 w-6" />
             </a>
           </div>
         </div>
