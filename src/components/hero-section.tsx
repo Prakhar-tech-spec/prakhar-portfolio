@@ -51,7 +51,7 @@ export function HeroSection({ personalizedMessage }: HeroSectionProps) {
       <div className="relative flex justify-center items-center mt-12 lg:mt-0">
         <div className="absolute w-full h-full max-w-[500px] max-h-[500px] bg-primary/10 rounded-full blur-3xl z-0"></div>
         <Image
-          src="https://placehold.co/500x500.png"
+          src="https://placehold.co/500x500"
           alt="Agency Owner"
           width={500}
           height={500}
