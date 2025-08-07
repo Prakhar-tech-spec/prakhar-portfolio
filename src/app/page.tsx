@@ -1,3 +1,26 @@
-export default function Home() {
-  return <></>;
+import { Header } from '@/components/header';
+import { HeroSection } from '@/components/hero-section';
+import { ServicesSection } from '@/components/services-section';
+import { PortfolioSection } from '@/components/portfolio-section';
+import { TestimonialsSection } from '@/components/testimonials-section';
+import { ContactSection } from '@/components/contact-section';
+import { Footer } from '@/components/footer';
+import { personalizeWelcomeMessage } from '@/ai/flows/personalize-welcome-message';
+
+export default async function Home() {
+  const { message } = await personalizeWelcomeMessage({ location: 'your region' }).catch(() => ({ message: 'Welcome to Corelk Digital Agency' }));
+  
+  return (
+    <div className="flex min-h-screen flex-col bg-background text-foreground">
+      <Header />
+      <main className="flex-1">
+        <HeroSection personalizedMessage={message} />
+        <ServicesSection />
+        <PortfolioSection />
+        <TestimonialsSection />
+        <ContactSection />
+      </main>
+      <Footer />
+    </div>
+  );
 }
