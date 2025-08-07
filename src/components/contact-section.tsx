@@ -15,7 +15,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import { Mail, Phone } from "lucide-react";
+import { CalendarDays, Mail, Phone } from "lucide-react";
 import { Card } from "./ui/card";
 import { submitContactForm } from "@/app/actions/contact";
 
@@ -69,13 +69,12 @@ export function ContactSection() {
           <p className="text-lg text-muted-foreground">
             Have a project in mind or just want to say hello? Fill out the form or use the contact information below. We'd love to hear from you.
           </p>
-          <Card className="p-6 flex items-start gap-4 bg-secondary">
-            <Mail className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
-            <div>
-                <h3 className="font-semibold">Email</h3>
-                <p className="text-muted-foreground break-all">hello@corelk.agency</p>
-            </div>
-          </Card>
+          <Button asChild className="w-full" size="lg">
+            <a href="https://calendly.com/arpanadventure/30min?month=2025-08" target="_blank" rel="noopener noreferrer">
+              <CalendarDays className="mr-2 h-5 w-5" />
+              Book a Free Strategy Call
+            </a>
+          </Button>
            <Button asChild className="bg-green-500 hover:bg-green-600 text-white w-full">
               <a href="https://api.whatsapp.com/send?phone=917029757375&text=Hi!%20I%E2%80%99m%20interested%20in%20your%20done-for-you%20creative%20and%20growth%20services.%20Can%20we%20connect%20to%20discuss%20what%20might%20be%20the%20best%20fit%3F" target="_blank" rel="noopener noreferrer">
                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 24 24" fill="currentColor">
