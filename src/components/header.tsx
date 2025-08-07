@@ -7,22 +7,14 @@ import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/co
 import { Menu } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
-const CorelkLogo = () => (
-  <svg
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    className="h-6 w-6 text-primary"
-  >
-    <path
-      d="M21.6 0H2.4C1.08 0 0 1.08 0 2.4V21.6C0 22.92 1.08 24 2.4 24H21.6C22.92 24 24 22.92 24 21.6V2.4C24 1.08 22.92 0 21.6 0ZM8.4 19.2H4.8V10.8H8.4V19.2ZM14.4 19.2H10.8V4.8H14.4V19.2ZM20.4 19.2H16.8V8.4H20.4V19.2Z"
-      fill="currentColor"
-    />
-  </svg>
+const ADVENTURELogo = () => (
+  <div className="flex items-center gap-2 font-semibold">
+    <div className="bg-primary text-primary-foreground h-8 w-8 flex items-center justify-center rounded-md">
+      <span className="text-lg font-bold">AD</span>
+    </div>
+    <span className="text-xl font-bold font-headline text-foreground">VENTURE</span>
+  </div>
 );
-
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -30,10 +22,9 @@ export function Header() {
   
   const navLinks = [
     { href: '#hero', label: 'Home' },
-    { href: '#services', label: 'History' },
-    { href: '#portfolio', label: 'Portfolio' },
-    { href: '#testimonials', label: 'About Me' },
-    { href: '#blog', label: 'Blog' },
+    { href: '#services', label: 'Services' },
+    { href: '#portfolio', label: 'Results' },
+    { href: '#testimonials', label: 'Testimonials' },
     { href: '#contact', label: 'Contact' },
   ];
 
@@ -67,8 +58,7 @@ export function Header() {
 
   const Logo = () => (
     <a href="#" className="flex items-center gap-2 font-semibold" onClick={(e) => handleScroll(e, '#hero')}>
-      <CorelkLogo />
-      <span className="text-xl font-bold font-headline text-foreground">Corelk</span>
+      <ADVENTURELogo />
     </a>
   );
 
