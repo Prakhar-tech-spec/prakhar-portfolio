@@ -28,7 +28,7 @@ export function HeroSection({ personalizedMessage }: HeroSectionProps) {
       <div className="container grid lg:grid-cols-2 items-center">
         <div className="flex flex-col items-center lg:items-start gap-6 text-center lg:text-left">
           <h1 className="text-4xl md:text-6xl font-bold font-headline tracking-tight">
-            An automation to <span className="text-primary-foreground bg-primary px-2 rounded-md">business</span> transformation
+            An automation to business transformation
           </h1>
           <p className="text-lg text-muted-foreground font-bold italic">
             Execute Growth & Automate
