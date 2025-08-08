@@ -18,8 +18,8 @@ export function ClientsSection() {
           <div className="w-full grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {stats.map((stat) => (
               <div key={stat.label}>
-                <p className="text-3xl md:text-4xl font-bold text-primary">{stat.value}</p>
-                <p className="text-sm text-muted-foreground">{stat.label}</p>
+                <p className="text-3xl md:text-4xl font-bold text-primary-foreground bg-primary px-2 rounded-md inline-block">{stat.value}</p>
+                <p className="text-sm text-muted-foreground mt-2">{stat.label}</p>
               </div>
             ))}
           </div>

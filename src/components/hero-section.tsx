@@ -28,7 +28,7 @@ export function HeroSection({ personalizedMessage }: HeroSectionProps) {
       <div className="container grid lg:grid-cols-2 items-center">
         <div className="flex flex-col items-center lg:items-start gap-6 text-center lg:text-left">
           <h1 className="text-4xl md:text-6xl font-bold font-headline tracking-tight">
-            An automation to <span className="text-primary">business</span> transformation
+            An automation to <span className="text-primary-foreground bg-primary px-2 rounded-md">business</span> transformation
           </h1>
           <p className="text-lg text-muted-foreground font-bold italic">
             Execute Growth & Automate
@@ -61,9 +61,9 @@ export function HeroSection({ personalizedMessage }: HeroSectionProps) {
         </div>
         <div className="relative flex justify-center items-center mt-12 lg:mt-0">
           <div className="absolute w-full h-full max-w-[300px] max-h-[300px] md:max-w-[500px] md:max-h-[500px] bg-primary/10 rounded-lg blur-3xl z-0"></div>
-           <Dot color="bg-blue-500" position="top-1/4 left-1/4" />
-           <Dot color="bg-red-500" position="top-1/2 right-1/4" />
-           <Dot color="bg-green-500" position="bottom-1/4 left-1/3" />
+           <Dot color="bg-primary" position="top-1/4 left-1/4" />
+           <Dot color="bg-primary" position="top-1/2 right-1/4" />
+           <Dot color="bg-primary" position="bottom-1/4 left-1/3" />
            <div className="relative w-[300px] h-[300px] md:w-[500px] md:h-[500px] rounded-lg overflow-hidden z-10 shadow-2xl">
               <Image
                 src="https://i.postimg.cc/0ymvXWWQ/apran-image-Photoroom.png"
@@ -82,7 +82,7 @@ export function HeroSection({ personalizedMessage }: HeroSectionProps) {
             </Badge>
           </div>
           <Badge variant="outline" className="absolute bottom-8 -right-4 md:bottom-10 md:-right-4 z-20 text-sm md:text-lg py-2 px-4 bg-background/80 backdrop-blur border-border text-foreground shadow-lg flex items-center gap-2 transition-colors hover:bg-primary/90 animate-float" style={{ animationDelay: '1.5s' }}>
-            <Briefcase className="h-4 w-4 md:h-5 md:w-5 text-primary"/>
+            <Briefcase className="h-4 w-4 md:h-5 md:h-5 text-primary"/>
             13 Years of Experience
           </Badge>
         </div>
