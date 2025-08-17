@@ -29,7 +29,7 @@ export function HeroSection({ personalizedMessage }: HeroSectionProps) {
         <div className="flex flex-col items-center lg:items-start gap-6 text-center lg:text-left">
           <h1 className="text-4xl md:text-6xl font-bold font-headline tracking-tight">
             An automation to{' '}
-            <span className="bg-primary text-primary-foreground px-2 rounded-md">
+            <span className="text-primary">
               business
             </span>{' '}
             transformation
