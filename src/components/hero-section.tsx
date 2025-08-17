@@ -1,3 +1,4 @@
+
 "use client";
 
 import Image from 'next/image';
@@ -78,7 +79,7 @@ export function HeroSection() {
            </div>
           <div className="absolute top-10 -left-4 md:top-20 md:-left-8 z-20 animate-float">
             <Badge className="relative text-base md:text-lg py-2 px-4 bg-primary text-primary-foreground shadow-lg transition-colors hover:bg-primary/90">
-              Hi, I'm Arpan
+              Hi, I'm Prakhar
             </Badge>
           </div>
           <Badge variant="outline" className="absolute bottom-8 -right-4 md:bottom-10 md:-right-4 z-20 text-sm md:text-lg py-2 px-4 bg-background/80 backdrop-blur border-border text-foreground shadow-lg flex items-center gap-2 transition-colors hover:bg-primary/90 animate-float" style={{ animationDelay: '1.5s' }}>
