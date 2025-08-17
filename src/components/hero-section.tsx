@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { ArrowRight, Briefcase, Instagram, Facebook, Linkedin } from 'lucide-react';
 import { ClientsSection } from './clients-section';
+import Link from 'next/link';
 
 const Dot = ({ color, position }: { color: string, position: string }) => (
   <div className={`absolute ${position} w-2 h-2 md:w-3 md:h-3 rounded-full ${color} opacity-50`}></div>
@@ -14,7 +15,8 @@ const Dot = ({ color, position }: { color: string, position: string }) => (
 export function HeroSection() {
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, href: string) => {
     e.preventDefault();
-    const targetElement = document.querySelector(href);
+    const targetId = href.substring(1);
+    const targetElement = document.getElementById(targetId);
     if (targetElement) {
       targetElement.scrollIntoView({ behavior: 'smooth' });
     }
@@ -42,9 +44,9 @@ export function HeroSection() {
               <a href="https://api.whatsapp.com/send?phone=917029757375&text=Hi!%20I%E2%80%99m%20interested%20in%20your%20done-for-you%20creative%20and%20growth%20services.%20Can%20we%20connect%20to%20discuss%20what%20might%20be%20the%20best%20fit%3F" target="_blank" rel="noopener noreferrer">Let's Talk</a>
             </Button>
             <Button size="lg" variant="link" asChild className="text-foreground">
-              <a href="#portfolio" onClick={(e) => handleScroll(e, '#portfolio')}>
+              <Link href="#portfolio" onClick={(e) => handleScroll(e, '#portfolio')}>
                 Portfolio <ArrowRight className="ml-2 h-4 w-4" />
-              </a>
+              </Link>
             </Button>
           </div>
           <div className="flex items-center gap-4 mt-4">
@@ -61,7 +63,7 @@ export function HeroSection() {
           </div>
         </div>
         <div className="relative flex justify-center items-center mt-12 lg:mt-0">
-          <div className="absolute w-full h-full max-w-[350px] max-h-[350px] md:max-w-[550px] md:max-h-[550px] bg-primary/10 rounded-lg blur-3xl z-0"></div>
+          <div className="absolute w-full h-full max-w-[350px] max-h-[350px] md:max-w-[550px] md:max-h-[550px] bg-primary/20 rounded-lg blur-3xl z-0"></div>
            <Dot color="bg-primary" position="top-1/4 left-1/4" />
            <Dot color="bg-primary" position="top-1/2 right-1/4" />
            <Dot color="bg-primary" position="bottom-1/4 left-1/3" />

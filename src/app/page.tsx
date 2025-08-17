@@ -22,11 +22,6 @@ export default async function Home() {
         <TestimonialsSection />
         <ContactSection />
       </main>
-      <div className="flex justify-center py-8">
-        <div className="bg-secondary text-muted-foreground px-6 py-3 rounded-full text-sm">
-          Made with 💕 by <a href="https://softservestudio.framer.website/" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/90">SoftServe Studios</a>
-        </div>
-      </div>
       <Footer />
     </div>
   );

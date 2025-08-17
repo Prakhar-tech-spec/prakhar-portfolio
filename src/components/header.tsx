@@ -6,13 +6,14 @@ import { Button } from '@/components/ui/button';
 import { motion, AnimatePresence } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import { X, Menu } from 'lucide-react';
+import Link from 'next/link';
 
 const navLinks = [
-    { href: '#hero', label: 'Home' },
-    { href: '#services', label: 'Services' },
-    { href: '#portfolio', label: 'Results' },
-    { href: '#testimonials', label: 'Testimonials' },
-    { href: '#contact', label: 'Contact' },
+    { href: '/#hero', label: 'Home' },
+    { href: '/#services', label: 'Services' },
+    { href: '/#portfolio', label: 'Results' },
+    { href: '/careers', label: 'Careers' },
+    { href: '/#contact', label: 'Contact' },
 ];
 
 const ADVENTURELogo = () => (
@@ -64,7 +65,7 @@ const AnimatedHamburgerButton = ({ isOpen, onClick }: { isOpen: boolean, onClick
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activeLink, setActiveLink] = useState('#hero');
+  const [activeLink, setActiveLink] = useState('/#hero');
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -74,8 +75,8 @@ export function Header() {
         setIsScrolled(isCurrentlyScrolled);
       }
       
-      const sections = navLinks.map(link => document.getElementById(link.href.substring(1))).filter(Boolean);
-      let currentSectionId = '#hero';
+      const sections = navLinks.map(link => document.getElementById(link.href.split('#')[1])).filter(Boolean);
+      let currentSectionId = '';
 
       for (const section of sections) {
         if (section) {
@@ -86,7 +87,16 @@ export function Header() {
             }
         }
       }
-      setActiveLink(currentSectionId);
+      const currentPath = window.location.pathname;
+      const currentHash = currentSectionId ? `/${currentSectionId}` : '';
+      
+      if (currentPath === '/' && currentHash) {
+          setActiveLink(currentHash);
+      } else if (currentPath !== '/') {
+          setActiveLink(currentPath);
+      } else {
+          setActiveLink('/#hero');
+      }
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -105,12 +115,17 @@ export function Header() {
   }, [isMenuOpen]);
 
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, href: string) => {
-    if (href.startsWith('#')) {
+    if (href.startsWith('/#')) {
       e.preventDefault();
-      const targetId = href.substring(1);
+      const targetId = href.substring(2);
       const targetElement = document.getElementById(targetId);
-      if (targetElement) {
-          targetElement.scrollIntoView({ behavior: 'smooth' });
+
+      if (window.location.pathname !== '/') {
+        window.location.href = href;
+      } else {
+        if (targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth' });
+        }
       }
     }
     setActiveLink(href);
@@ -118,15 +133,15 @@ export function Header() {
   };
 
   const Logo = () => (
-    <a href="#hero" className="flex items-center gap-2 font-semibold" onClick={(e) => handleLinkClick(e, '#hero')}>
+    <Link href="/#hero" className="flex items-center gap-2 font-semibold" onClick={(e) => handleLinkClick(e, '/#hero')}>
       <ADVENTURELogo />
-    </a>
+    </Link>
   );
 
   const NavMenu = () => (
     <nav className="hidden md:flex items-center gap-6 text-sm">
       {navLinks.map((link) => (
-        <a
+        <Link
           key={link.href}
           href={link.href}
           onClick={(e) => handleLinkClick(e, link.href)}
@@ -136,7 +151,7 @@ export function Header() {
           )}
         >
           {link.label}
-        </a>
+        </Link>
       ))}
     </nav>
   );
