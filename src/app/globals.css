@@ -4,25 +4,25 @@
 
 @layer base {
   :root {
-    --background: 0 0% 0%;
-    --foreground: 0 0% 100%;
-    --card: 0 0% 0%;
-    --card-foreground: 0 0% 100%;
-    --popover: 0 0% 0%;
-    --popover-foreground: 0 0% 100%;
-    --primary: 0 0% 100%;
-    --primary-foreground: 0 0% 0%;
-    --secondary: 0 0% 10%;
-    --secondary-foreground: 0 0% 100%;
-    --muted: 0 0% 10%;
-    --muted-foreground: 0 0% 60%;
-    --accent: 0 0% 100%;
-    --accent-foreground: 0 0% 0%;
+    --background: 0 0% 0%; /* Black */
+    --foreground: 0 0% 100%; /* White */
+    --card: 0 0% 0%; /* Black */
+    --card-foreground: 0 0% 100%; /* White */
+    --popover: 0 0% 0%; /* Black */
+    --popover-foreground: 0 0% 100%; /* White */
+    --primary: 75 90% 60%; /* Green #c3f53c */
+    --primary-foreground: 0 0% 0%; /* Black */
+    --secondary: 240 3.7% 15.9%; /* Dark Gray */
+    --secondary-foreground: 0 0% 100%; /* White */
+    --muted: 240 5% 64.9%; /* Light Gray for less emphasis */
+    --muted-foreground: 240 5% 64.9%; /* Muted Text */
+    --accent: 75 90% 60%; /* Green #c3f53c */
+    --accent-foreground: 0 0% 0%; /* Black */
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 20%;
+    --border: 0 0% 20%; /* Dark Gray #333333 */
     --input: 0 0% 20%;
-    --ring: 0 0% 100%;
+    --ring: 75 90% 60%; /* Green #c3f53c */
     --chart-1: 0 0% 80%;
     --chart-2: 0 0% 60%;
     --chart-3: 0 0% 40%;
@@ -39,25 +39,25 @@
     --sidebar-ring: 0 0% 100%;
   }
   .dark {
-    --background: 0 0% 0%;
-    --foreground: 0 0% 100%;
-    --card: 0 0% 0%;
-    --card-foreground: 0 0% 100%;
-    --popover: 0 0% 0%;
-    --popover-foreground: 0 0% 100%;
-    --primary: 0 0% 100%;
-    --primary-foreground: 0 0% 0%;
-    --secondary: 0 0% 10%;
-    --secondary-foreground: 0 0% 100%;
-    --muted: 0 0% 10%;
-    --muted-foreground: 0 0% 60%;
-    --accent: 0 0% 100%;
-    --accent-foreground: 0 0% 0%;
+    --background: 0 0% 0%; /* Black */
+    --foreground: 0 0% 100%; /* White */
+    --card: 0 0% 0%; /* Black */
+    --card-foreground: 0 0% 100%; /* White */
+    --popover: 0 0% 0%; /* Black */
+    --popover-foreground: 0 0% 100%; /* White */
+    --primary: 75 90% 60%; /* Green #c3f53c */
+    --primary-foreground: 0 0% 0%; /* Black */
+    --secondary: 240 3.7% 15.9%; /* Dark Gray */
+    --secondary-foreground: 0 0% 100%; /* White */
+    --muted: 240 5% 64.9%; /* Light Gray for less emphasis */
+    --muted-foreground: 240 5% 64.9%; /* Muted Text */
+    --accent: 75 90% 60%; /* Green #c3f53c */
+    --accent-foreground: 0 0% 0%; /* Black */
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 20%;
+    --border: 0 0% 20%; /* Dark Gray #333333 */
     --input: 0 0% 20%;
-    --ring: 0 0% 100%;
+    --ring: 75 90% 60%; /* Green #c3f53c */
     --chart-1: 0 0% 80%;
     --chart-2: 0 0% 60%;
     --chart-3: 0 0% 40%;
