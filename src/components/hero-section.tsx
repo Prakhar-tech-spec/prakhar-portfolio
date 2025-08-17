@@ -63,7 +63,7 @@ export function HeroSection() {
           </div>
         </div>
         <div className="relative flex justify-center items-center mt-12 lg:mt-0">
-          <div className="absolute w-full h-full max-w-[350px] max-h-[350px] md:max-w-[550px] md:max-h-[550px] bg-primary/20 rounded-lg blur-3xl z-0"></div>
+          <div className="absolute w-full h-full max-w-[350px] max-h-[350px] md:max-w-[550px] md:max-h-[550px] bg-primary/10 rounded-lg blur-3xl z-0"></div>
            <Dot color="bg-primary" position="top-1/4 left-1/4" />
            <Dot color="bg-primary" position="top-1/2 right-1/4" />
            <Dot color="bg-primary" position="bottom-1/4 left-1/3" />
