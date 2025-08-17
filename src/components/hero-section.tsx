@@ -70,7 +70,7 @@ export function HeroSection({ personalizedMessage }: HeroSectionProps) {
            <Dot color="bg-primary" position="bottom-1/4 left-1/3" />
            <div className="relative w-[300px] h-[300px] md:w-[500px] md:h-[500px] rounded-lg overflow-hidden z-10 shadow-2xl">
               <Image
-                src="https://i.postimg.cc/0ymvXWWQ/apran-image-Photoroom.png"
+                src="https://i.postimg.cc/Kvs5Jz0J/Whats-App-Image-2025-07-14-at-3-37-33-AM-Photoroom.png"
                 alt="Agency Owner"
                 width={500}
                 height={600}
