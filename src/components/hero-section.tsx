@@ -84,7 +84,7 @@ export function HeroSection() {
           </div>
           <Badge variant="outline" className="absolute bottom-8 -right-4 md:bottom-10 md:-right-4 z-20 text-sm md:text-lg py-2 px-4 bg-background/80 backdrop-blur border-border text-foreground shadow-lg flex items-center gap-2 transition-colors hover:bg-primary/90 animate-float" style={{ animationDelay: '1.5s' }}>
             <Briefcase className="h-4 w-4 md:h-5 md:h-5 text-primary"/>
-            13 Years of Experience
+            2+ Years of Experience
           </Badge>
         </div>
       </div>
