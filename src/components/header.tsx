@@ -16,12 +16,9 @@ const navLinks = [
     { href: '/#contact', label: 'Contact' },
 ];
 
-const ADVENTURELogo = () => (
+const WeBrandYouLogo = () => (
     <div className="flex items-center gap-2 font-semibold">
-      <div className="bg-primary text-primary-foreground h-8 w-8 flex items-center justify-center rounded-md">
-        <span className="text-lg font-bold">AD</span>
-      </div>
-      <span className="text-xl font-bold font-headline text-foreground">VENTURE</span>
+      <span className="text-xl font-bold font-headline text-foreground">We Brand You</span>
     </div>
 );
 
@@ -134,7 +131,7 @@ export function Header() {
 
   const Logo = () => (
     <Link href="/#hero" className="flex items-center gap-2 font-semibold" onClick={(e) => handleLinkClick(e, '/#hero')}>
-      <ADVENTURELogo />
+      <WeBrandYouLogo />
     </Link>
   );
 

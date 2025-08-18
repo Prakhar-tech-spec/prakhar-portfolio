@@ -1,11 +1,8 @@
 import { Facebook, Instagram, Linkedin } from "lucide-react";
 
-const ADVENTURELogo = () => (
+const WeBrandYouLogo = () => (
     <div className="flex items-center gap-2 font-semibold">
-      <div className="bg-primary text-primary-foreground h-8 w-8 flex items-center justify-center rounded-md">
-        <span className="text-lg font-bold">AD</span>
-      </div>
-      <span className="text-xl font-bold font-headline text-foreground">VENTURE</span>
+      <span className="text-xl font-bold font-headline text-foreground">We Brand You</span>
     </div>
 );
 
@@ -14,10 +11,10 @@ export function Footer() {
     <footer className="bg-secondary border-t border-border/40">
         <div className="container py-8 flex flex-col md:flex-row items-center justify-between gap-4">
              <div className="flex items-center gap-2">
-                <ADVENTURELogo />
+                <WeBrandYouLogo />
             </div>
             <p className="text-sm text-muted-foreground">
-                &copy; {new Date().getFullYear()} AD VENTURE MARKETING. All rights reserved.
+                &copy; {new Date().getFullYear()} We Brand You. All rights reserved.
             </p>
             <div className="flex items-center gap-4">
                 <a href="https://www.instagram.com/arpanigcoach?igsh=OGRuNnRyeHVqNzBr" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-muted-foreground hover:text-primary transition-colors">
