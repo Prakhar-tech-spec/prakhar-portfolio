@@ -2,6 +2,7 @@ import type {Metadata} from 'next';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster"
 import { Inter, Lexend } from 'next/font/google'
+import { CursorFollower } from '@/components/cursor-follower';
 
 export const metadata: Metadata = {
   title: 'Corelk Digital Agency',
@@ -27,6 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark scroll-smooth">
       <body className={`${inter.variable} ${lexend.variable} font-body antialiased`}>
+        <CursorFollower />
         {children}
         <Toaster />
       </body>
