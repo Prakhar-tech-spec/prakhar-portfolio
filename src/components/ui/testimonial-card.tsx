@@ -20,12 +20,12 @@ export function TestimonialCard({
   className,
 }: TestimonialCardProps) {
   const cardContent = (
-    <div className="flex flex-col justify-center p-6 rounded-2xl bg-background/20 h-full">
+    <div className={cn("flex flex-col justify-center p-6 rounded-2xl h-full", bgColor)}>
       <blockquote className="flex flex-col justify-center h-full">
-        <p className="text-sm md:text-base font-medium">
+        <p className="text-sm md:text-base font-medium text-background">
           &ldquo;{quote}&rdquo;
         </p>
-        <footer className="mt-4 text-sm font-bold">- {name}</footer>
+        <footer className="mt-4 text-sm font-bold text-background/80">- {name}</footer>
       </blockquote>
     </div>
   );
@@ -46,8 +46,7 @@ export function TestimonialCard({
   return (
       <div
           className={cn(
-          "grid grid-cols-[1fr_2fr] items-center gap-4 p-4 rounded-2xl h-full",
-          bgColor,
+          "grid grid-cols-[1fr_2fr] items-center gap-4 p-4 rounded-2xl h-full bg-black",
           className
           )}
       >
