@@ -97,7 +97,7 @@ export function PortfolioSection() {
 
 
   return (
-    <section id="portfolio" className="py-20 md:py-32">
+    <section id="portfolio" className="py-12 md:py-20">
       <div className="container">
         <div className="text-center max-w-2xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold font-headline">Work That <UnderlinedText>Speaks</UnderlinedText></h2>
@@ -113,7 +113,7 @@ export function PortfolioSection() {
                         className={cn(
                             "rounded-full px-4 py-2 text-sm transition-colors",
                             activeFilter === filter 
-                                ? 'bg-background text-foreground' 
+                                ? 'bg-background text-foreground hover:bg-background/90' 
                                 : 'text-muted-foreground hover:bg-primary/90 hover:text-accent-foreground'
                         )}
                     >
