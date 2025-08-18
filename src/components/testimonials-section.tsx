@@ -184,12 +184,12 @@ export function TestimonialsSection() {
         <InfiniteMovingCards
           items={testimonialsRowOne}
           direction="right"
-          speed="slow"
+          speed="normal"
         />
         <InfiniteMovingCards
           items={testimonialsRowTwo}
           direction="left"
-          speed="slow"
+          speed="normal"
         />
       </div>
     </section>

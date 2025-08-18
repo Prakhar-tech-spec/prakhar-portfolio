@@ -28,7 +28,7 @@ export function TestimonialCard({
       )}
     >
       <div className="md:w-1/3 flex-shrink-0">
-        <div className="relative w-32 h-32 md:w-full md:h-full aspect-square rounded-2xl overflow-hidden">
+        <div className="relative w-32 h-32 md:w-full md:h-40 aspect-square rounded-2xl overflow-hidden">
           <Image
             src={image}
             alt={name}
