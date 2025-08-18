@@ -27,7 +27,7 @@ export function HeroSection() {
         <div className="flex flex-col items-center lg:items-start gap-6 text-center lg:text-left">
           <h1 className="text-4xl md:text-6xl font-bold font-headline tracking-tight">
             Let's make your{' '}
-            <span className="text-primary font-body">
+            <span className="text-primary font-cursive">
               Personal Brand
             </span>{' '}
             unforgettable
