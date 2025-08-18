@@ -17,8 +17,10 @@ const navLinks = [
 ];
 
 const WeBrandYouLogo = () => (
-    <div className="flex items-center gap-2 font-semibold">
-      <span className="text-xl font-bold font-headline text-foreground">We Brand You</span>
+    <div className="flex items-center gap-1 font-semibold">
+      <span className="text-xl font-bold font-headline text-foreground">We</span>
+      <span className="text-xl font-bold font-cursive text-primary">Brand</span>
+      <span className="text-xl font-bold font-headline text-foreground">You</span>
     </div>
 );
 
