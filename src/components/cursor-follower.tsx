@@ -5,18 +5,38 @@ import { cn } from '@/lib/utils';
 
 export function CursorFollower() {
   const [position, setPosition] = useState({ x: -100, y: -100 });
-  const [isMounted, setIsMounted] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    setIsMounted(true);
     const handleMouseMove = (e: MouseEvent) => {
       setPosition({ x: e.clientX, y: e.clientY });
     };
 
-    window.addEventListener('mousemove', handleMouseMove);
+    const handleMouseEnter = () => {
+      setIsVisible(true);
+    };
+    
+    const handleMouseLeave = () => {
+      setIsVisible(false);
+    };
+
+    document.addEventListener('mousemove', handleMouseMove);
+    document.body.addEventListener('mouseenter', handleMouseEnter);
+    document.body.addEventListener('mouseleave', handleMouseLeave);
+
+    // Initial check in case cursor is already inside
+    const initialCheck = setTimeout(() => {
+        if(document.querySelector(":hover")) {
+            setIsVisible(true);
+        }
+    }, 100);
+
 
     return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
+      document.removeEventListener('mousemove', handleMouseMove);
+      document.body.removeEventListener('mouseenter', handleMouseEnter);
+      document.body.removeEventListener('mouseleave', handleMouseLeave);
+      clearTimeout(initialCheck);
     };
   }, []);
 
@@ -32,7 +52,7 @@ export function CursorFollower() {
       style={{
         left: `${position.x}px`,
         top: `${position.y}px`,
-        opacity: isMounted ? 1 : 0,
+        opacity: isVisible ? 1 : 0,
         transition: 'opacity 0.3s ease-in-out, top 0.05s ease-out, left 0.05s ease-out',
       }}
     />
