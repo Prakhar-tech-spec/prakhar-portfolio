@@ -173,7 +173,7 @@ export function Header() {
             <div className="hidden md:flex items-center gap-4">
               <NavMenu />
               <Button asChild size="sm" className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full">
-                <a href="https://api.whatsapp.com/send?phone=917029757375&text=Hi!%20I%E2%80%99m%20interested%20in%20your%20done-for-you%20creative%20and%20growth%20services.%20Can%20we%20connect%20to%20discuss%20what%20might%20be%20the%20best%20fit%3F" target="_blank" rel="noopener noreferrer">Let's Talk</a>
+                <a href="https://wa.link/nn8ob7" target="_blank" rel="noopener noreferrer">Let's Talk</a>
               </Button>
             </div>
       
@@ -210,7 +210,7 @@ export function Header() {
                         </motion.a>
                     ))}
                      <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full mt-4">
-                        <a href="https://api.whatsapp.com/send?phone=917029757375&text=Hi!%20I%E2%80%99m%20interested%20in%20your%20done-for-you%20creative%20and%20growth%20services.%20Can%20we%20connect%20to%20discuss%20what%20might%20be%20the%20best%20fit%3F" target="_blank" rel="noopener noreferrer">Let's Talk</a>
+                        <a href="https://wa.link/nn8ob7" target="_blank" rel="noopener noreferrer">Let's Talk</a>
                     </Button>
                 </nav>
             </motion.div>
