@@ -12,48 +12,56 @@ import { UnderlinedText } from "./ui/underlined-text";
 
 const portfolioItems = [
   {
+    id: 1,
     title: "E-commerce Platform Redesign",
     category: "Web & App",
     image: "https://placehold.co/375x812.png",
     aiHint: "website screenshot"
   },
   {
+    id: 2,
     title: "SaaS Dashboard Development",
     category: "Web & App",
     image: "https://placehold.co/375x812.png",
     aiHint: "dashboard analytics"
   },
   {
+    id: 3,
     title: "Promotional Video for New Product",
     category: "Video Editing",
     image: "https://placehold.co/375x812.png",
     aiHint: "product video"
   },
   {
+    id: 4,
     title: "Social Media Campaign Visuals",
     category: "Social Media",
     image: "https://placehold.co/375x812.png",
     aiHint: "social media post"
   },
   {
+    id: 5,
     title: "YouTube Channel Thumbnail Pack",
     category: "Graphics & Thumbnails",
     image: "https://placehold.co/375x812.png",
     aiHint: "youtube thumbnail"
   },
   {
+    id: 6,
     title: "AI Chatbot for Customer Service",
     category: "AI Agents",
     image: "https://placehold.co/375x812.png",
     aiHint: "chatbot interface"
   },
   {
+    id: 7,
     title: "Google Ads Campaign Management",
     category: "Paid Ads",
     image: "https://placehold.co/375x812.png",
     aiHint: "advertising dashboard"
   },
   {
+    id: 8,
     title: "Instagram Content Creation",
     category: "Social Media",
     image: "https://placehold.co/375x812.png",
@@ -73,11 +81,14 @@ const filterCategories = [
 
 export function PortfolioSection() {
   const [activeFilter, setActiveFilter] = useState("All Work");
-  const [rotations, setRotations] = useState<number[]>([]);
+  const [rotations, setRotations] = useState<{[key: number]: number}>({});
 
   useEffect(() => {
-    // Generate random rotations only on the client-side
-    setRotations(portfolioItems.map(() => Math.floor(Math.random() * 10) - 5)); // -5 to 5 degrees
+    const newRotations: {[key: number]: number} = {};
+    portfolioItems.forEach(item => {
+      newRotations[item.id] = Math.floor(Math.random() * 10) - 5; // -5 to 5 degrees
+    });
+    setRotations(newRotations);
   }, []);
 
 
@@ -111,11 +122,11 @@ export function PortfolioSection() {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-16 gap-x-8 mt-24">
-          {filteredItems.map((item, index) => (
+          {filteredItems.map((item) => (
             <div 
               key={item.title} 
               className="group flex flex-col items-center text-center transition-transform duration-300 hover:!rotate-0"
-              style={{ transform: `rotate(${rotations[index] || 0}deg)` }}
+              style={{ transform: `rotate(${rotations[item.id] || 0}deg)` }}
             >
               <MobileMockup imgSrc={item.image} alt={item.title} aiHint={item.aiHint} />
               <div className="mt-6">
