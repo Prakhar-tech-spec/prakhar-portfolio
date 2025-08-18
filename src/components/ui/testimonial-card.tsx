@@ -20,8 +20,8 @@ export function TestimonialCard({
   className,
 }: TestimonialCardProps) {
   const cardContent = (
-    <div className={cn("flex flex-col justify-center p-6 rounded-2xl h-full", bgColor)}>
-      <blockquote className="flex flex-col justify-center h-full">
+    <div className={cn("flex flex-col justify-start p-6 rounded-2xl h-full", bgColor)}>
+      <blockquote className="flex flex-col justify-start h-full">
         <p className="text-sm md:text-base font-medium text-primary-foreground">
           &ldquo;{quote}&rdquo;
         </p>
