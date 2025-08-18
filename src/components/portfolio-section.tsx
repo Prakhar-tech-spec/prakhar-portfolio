@@ -97,7 +97,7 @@ export function PortfolioSection() {
                         className={cn(
                             "rounded-full px-4 py-2 text-sm transition-colors",
                             activeFilter === filter 
-                                ? 'bg-background text-foreground hover:bg-background' 
+                                ? 'bg-background text-foreground hover:bg-background hover:text-foreground' 
                                 : 'text-muted-foreground hover:bg-background/90 hover:text-foreground'
                         )}
                     >
