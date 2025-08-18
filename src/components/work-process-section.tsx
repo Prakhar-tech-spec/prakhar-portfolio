@@ -1,3 +1,4 @@
+
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
@@ -34,8 +35,8 @@ const Step = ({ step, title, description, index, progress }: { step: string; tit
     const end = (index + 1) / stepCount;
     
     // Animate opacity and color based on the scroll progress for the current step
-    const opacity = useTransform(progress, [start, (start + end) / 2, end], [0.3, 1, 0.3]);
-    const color = useTransform(progress, [start, (start + end) / 2, end], ['hsl(var(--muted-foreground))', 'hsl(var(--primary))', 'hsl(var(--muted-foreground))']);
+    const opacity = useTransform(progress, [start, start + 0.05, end - 0.05, end], [0.3, 1, 1, 0.3]);
+    const color = useTransform(progress, [start, start + 0.05, end - 0.05, end], ['hsl(var(--muted-foreground))', 'hsl(var(--primary))', 'hsl(var(--primary))', 'hsl(var(--muted-foreground))']);
 
     return (
         <motion.div style={{ opacity }} className="relative mb-24 last:mb-0">
@@ -54,6 +55,10 @@ export function WorkProcessSection() {
     target: containerRef,
     offset: ["start center", "end center"],
   });
+
+  const timelineHeight = "100%"; 
+  const dotY = useTransform(scrollYProgress, [0, 1], [0, `calc(${timelineHeight} - 8px)`]);
+
 
   return (
     <section id="process" className="py-20 md:py-32" ref={containerRef}>
@@ -77,6 +82,10 @@ export function WorkProcessSection() {
             <motion.div
                 className="absolute left-0 top-0 w-0.5 bg-primary origin-top"
                 style={{ scaleY: scrollYProgress, transformOrigin: 'top', height: '100%' }}
+            />
+             <motion.div 
+                className="absolute -left-[3px] w-2 h-2 rounded-full bg-primary"
+                style={{ y: dotY }}
             />
             <div className="md:pl-8">
               {processSteps.map((step, index) => {
