@@ -43,6 +43,9 @@ export function ServicesSection() {
           {services.map((service) => (
             <div key={service.title} className="relative">
               <Card className="group text-center flex flex-col items-center p-6 bg-background border-2 border-transparent transition-all duration-300 transform md:hover:-translate-y-2 shadow-lg hover:shadow-primary/20 md:hover:bg-primary md:hover:bg-[linear-gradient(45deg,rgba(0,0,0,0.05)_25%,transparent_25%,transparent_50%,rgba(0,0,0,0.05)_50%,rgba(0,0,0,0.05)_75%,transparent_75%,transparent)] md:hover:bg-[length:6px_6px] overflow-hidden">
+                <div className="absolute inset-0 opacity-100 group-hover:opacity-0 transition-opacity duration-500">
+                  <Meteors number={20} />
+                </div>
                 <CardHeader className="p-0 pt-6">
                   <CardTitle className="mt-4 font-headline md:group-hover:font-cursive md:group-hover:text-primary-foreground">{service.title}</CardTitle>
                 </CardHeader>
@@ -51,9 +54,6 @@ export function ServicesSection() {
                       {service.description}
                     </p>
                 </CardContent>
-                <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <Meteors number={20} />
-                </div>
               </Card>
             </div>
           ))}
