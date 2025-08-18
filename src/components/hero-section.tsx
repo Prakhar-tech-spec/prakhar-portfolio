@@ -37,7 +37,7 @@ export function HeroSection() {
             Execute Growth & Automate
           </p>
           <p className="text-base md:text-lg text-muted-foreground max-w-md">
-            Smart strategy. Killer creative. AI that works while you sleep.
+            Grow your personal brand by 2-5x in 90-120 days, guaranteed
           </p>
           <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 w-full sm:w-auto">
             <Button size="lg" asChild className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full">
