@@ -16,16 +16,8 @@ const services = [
     description: "Crafting compelling video content that tells your story and captivates your audience.",
   },
   {
-    title: "Paid Ads",
-    description: "Driving targeted traffic and maximizing ROI with strategic paid advertising campaigns.",
-  },
-  {
     title: "Web & App Development",
     description: "Building responsive, high-performance websites and apps with modern technologies.",
-  },
-  {
-    title: "AI & Automation",
-    description: "Implementing AI agents and automation to streamline your business operations.",
   },
   {
     title: "Graphic Design",
@@ -49,7 +41,7 @@ export function ServicesSection() {
             Stand Out. <UnderlinedText>Everywhere.</UnderlinedText>
           </h2>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
           {services.map((service, index) => (
             <div key={service.title} className="relative group" style={{ transform: `rotate(${rotations[index] || 0}deg)` }}>
               <Card className="text-center flex flex-col items-center p-6 bg-background border-2 border-transparent transition-all duration-300 transform md:hover:-translate-y-2 md:hover:!rotate-0 shadow-lg hover:shadow-primary/20 md:hover:bg-primary md:hover:bg-[linear-gradient(45deg,rgba(0,0,0,0.05)_25%,transparent_25%,transparent_50%,rgba(0,0,0,0.05)_50%,rgba(0,0,0,0.05)_75%,transparent_75%,transparent)] md:hover:bg-[length:6px_6px] overflow-hidden">

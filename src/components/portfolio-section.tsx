@@ -47,20 +47,6 @@ const portfolioItems = [
     aiHint: "youtube thumbnail"
   },
   {
-    id: 6,
-    title: "AI Chatbot for Customer Service",
-    category: "AI Agents",
-    image: "https://placehold.co/375x812.png",
-    aiHint: "chatbot interface"
-  },
-  {
-    id: 7,
-    title: "Google Ads Campaign Management",
-    category: "Paid Ads",
-    image: "https://placehold.co/375x812.png",
-    aiHint: "advertising dashboard"
-  },
-  {
     id: 8,
     title: "Instagram Content Creation",
     category: "Social Media",
@@ -74,9 +60,7 @@ const filterCategories = [
   "Video Editing",
   "Graphics & Thumbnails",
   "Web & App",
-  "Paid Ads",
   "Social Media",
-  "AI Agents"
 ];
 
 export function PortfolioSection() {
