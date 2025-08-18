@@ -164,10 +164,10 @@ const InfiniteMovingCards = ({
 
 export function TestimonialsSection() {
   const testimonialsRowOne = testimonials.slice(0, 4);
-  const testimonialsRowTwo = testimonials.slice(3);
+  const testimonialsRowTwo = testimonials.slice(4);
 
   return (
-    <section id="testimonials" className="py-20 md:py-32 bg-secondary">
+    <section id="testimonials" className="py-12 md:py-20 bg-secondary">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-2xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold font-headline">
