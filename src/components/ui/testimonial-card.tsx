@@ -46,7 +46,7 @@ export function TestimonialCard({
   return (
       <div
           className={cn(
-          "grid md:grid-cols-[1fr_2fr] items-center gap-4 p-4 rounded-2xl h-full bg-secondary border border-foreground/20",
+          "grid md:grid-cols-[1fr_2fr] items-center gap-4 p-4 rounded-2xl h-full bg-secondary border border-transparent md:border-foreground/20",
           className
           )}
       >
