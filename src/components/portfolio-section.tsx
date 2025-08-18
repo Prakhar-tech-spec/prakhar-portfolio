@@ -83,18 +83,18 @@ export function PortfolioSection() {
   const [activeFilter, setActiveFilter] = useState("All Work");
   const [rotations, setRotations] = useState<{[key: number]: number}>({});
 
-  useEffect(() => {
-    const newRotations: {[key: number]: number} = {};
-    portfolioItems.forEach(item => {
-      newRotations[item.id] = Math.floor(Math.random() * 10) - 5; // -5 to 5 degrees
-    });
-    setRotations(newRotations);
-  }, []);
-
-
   const filteredItems = activeFilter === "All Work"
     ? portfolioItems.slice(0, 3)
     : portfolioItems.filter((item) => item.category === activeFilter);
+  
+  useEffect(() => {
+    const newRotations: {[key: number]: number} = {};
+    filteredItems.forEach(item => {
+      newRotations[item.id] = Math.floor(Math.random() * 10) - 5; // -5 to 5 degrees
+    });
+    setRotations(newRotations);
+  }, [activeFilter]);
+
 
   return (
     <section id="portfolio" className="py-20 md:py-32">
@@ -113,8 +113,8 @@ export function PortfolioSection() {
                         className={cn(
                             "rounded-full px-4 py-2 text-sm transition-colors",
                             activeFilter === filter 
-                                ? 'bg-background text-foreground hover:bg-background/90' 
-                                : 'text-muted-foreground hover:text-accent-foreground'
+                                ? 'bg-background text-foreground' 
+                                : 'text-muted-foreground hover:bg-primary/90 hover:text-accent-foreground'
                         )}
                     >
                         {filter}
