@@ -36,15 +36,15 @@ const Step = ({ step, title, description, index, progress }: { step: string; tit
     
     const opacity = useTransform(progress, [start, start + 0.05, end - 0.05, end], [0.3, 1, 1, 0.3]);
     const color = useTransform(progress, [start, start + 0.05, end - 0.05, end], ['hsl(var(--muted-foreground))', 'hsl(var(--primary))', 'hsl(var(--primary))', 'hsl(var(--muted-foreground))']);
-    const dotColor = useTransform(progress, [start, start + 0.05, end - 0.05, end], ['hsl(var(--muted))', 'hsl(var(--primary))', 'hsl(var(--primary))', 'hsl(var(--muted))']);
+    const dotColor = useTransform(progress, [start, start + 0.05, end - 0.05, end], ['hsl(var(--border))', 'hsl(var(--primary))', 'hsl(var(--primary))', 'hsl(var(--border))']);
 
     return (
         <motion.div style={{ opacity }} className="relative mb-24 last:mb-0">
             <motion.div 
-                className="absolute w-2 h-2 rounded-full -left-[4.5px] top-1"
+                className="absolute w-2 h-2 rounded-full -left-[4.5px] top-3.5"
                 style={{ backgroundColor: dotColor }}
             />
-            <div className="absolute -left-12 md:-left-20 top-1 text-7xl md:text-8xl font-bold pointer-events-none text-background opacity-20 text-stroke">
+            <div className="absolute -left-12 md:-left-20 top-1 text-7xl md:text-8xl font-bold pointer-events-none opacity-20 text-background text-stroke">
                 {step}
             </div>
             <motion.h3 style={{ color }} className="mb-2 text-3xl font-bold font-headline">{title}</motion.h3>
