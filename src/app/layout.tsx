@@ -1,7 +1,7 @@
 import type {Metadata} from 'next';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster"
-import { Inter, Lexend, Dancing_Script } from 'next/font/google'
+import { Inter, Lexend, Italianno } from 'next/font/google'
 import { CursorFollower } from '@/components/cursor-follower';
 
 export const metadata: Metadata = {
@@ -19,9 +19,10 @@ const lexend = Lexend({
   variable: '--font-lexend',
 })
 
-const dancingScript = Dancing_Script({
+const italianno = Italianno({
   subsets: ['latin'],
-  variable: '--font-dancing-script',
+  weight: '400',
+  variable: '--font-italianno',
 })
 
 
@@ -32,7 +33,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark scroll-smooth">
-      <body className={`${inter.variable} ${lexend.variable} ${dancingScript.variable} font-body antialiased`}>
+      <body className={`${inter.variable} ${lexend.variable} ${italianno.variable} font-body antialiased`}>
         <CursorFollower />
         {children}
         <Toaster />
