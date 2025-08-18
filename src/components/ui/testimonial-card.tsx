@@ -31,7 +31,7 @@ export function TestimonialCard({
   );
 
   const imageContent = (
-    <div className="relative w-full h-[150px] rounded-2xl overflow-hidden">
+    <div className="relative w-full h-full rounded-2xl overflow-hidden">
         <Image
             src={image}
             alt={name}
@@ -46,7 +46,7 @@ export function TestimonialCard({
   return (
       <div
           className={cn(
-          "grid grid-cols-[1fr_2fr] items-center gap-4 p-4 rounded-2xl h-full bg-secondary",
+          "grid grid-cols-[1fr_2fr] items-center gap-4 p-4 rounded-2xl h-full bg-secondary border border-foreground/20",
           className
           )}
       >
