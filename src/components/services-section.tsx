@@ -33,9 +33,9 @@ export function ServicesSection() {
     <section id="services" className="py-20 md:py-32 bg-secondary">
       <div className="container">
         <div className="text-center max-w-2xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold font-headline">Your Complete Growth Toolkit</h2>
+          <h2 className="text-3xl md:text-4xl font-bold font-headline">Stand Out. Everywhere</h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            We offer digital services to grow and elevate your business online.
+            More visibility. More credibility. More growth.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
