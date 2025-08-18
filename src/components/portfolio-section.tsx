@@ -7,54 +7,55 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "./ui/button";
 import React, { useState } from "react";
 import { cn } from "@/lib/utils";
+import { MobileMockup } from "./ui/mobile-mockup";
 
 const portfolioItems = [
   {
     title: "E-commerce Platform Redesign",
     category: "Web & App",
-    image: "https://placehold.co/600x400.png",
+    image: "https://placehold.co/375x812.png",
     aiHint: "website screenshot"
   },
   {
     title: "SaaS Dashboard Development",
     category: "Web & App",
-    image: "https://placehold.co/600x400.png",
+    image: "https://placehold.co/375x812.png",
     aiHint: "dashboard analytics"
   },
   {
     title: "Promotional Video for New Product",
     category: "Video Editing",
-    image: "https://placehold.co/600x400.png",
+    image: "https://placehold.co/375x812.png",
     aiHint: "product video"
   },
   {
     title: "Social Media Campaign Visuals",
     category: "Social Media",
-    image: "https://placehold.co/600x400.png",
+    image: "https://placehold.co/375x812.png",
     aiHint: "social media post"
   },
   {
     title: "YouTube Channel Thumbnail Pack",
     category: "Graphics & Thumbnails",
-    image: "https://placehold.co/600x400.png",
+    image: "https://placehold.co/375x812.png",
     aiHint: "youtube thumbnail"
   },
   {
     title: "AI Chatbot for Customer Service",
     category: "AI Agents",
-    image: "https://placehold.co/600x400.png",
+    image: "https://placehold.co/375x812.png",
     aiHint: "chatbot interface"
   },
   {
     title: "Google Ads Campaign Management",
     category: "Paid Ads",
-    image: "https://placehold.co/600x400.png",
+    image: "https://placehold.co/375x812.png",
     aiHint: "advertising dashboard"
   },
   {
     title: "Instagram Content Creation",
     category: "Social Media",
-    image: "https://placehold.co/600x400.png",
+    image: "https://placehold.co/375x812.png",
     aiHint: "instagram post"
   },
 ];
@@ -101,32 +102,23 @@ export function PortfolioSection() {
             </div>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-16 gap-x-8 mt-24">
           {filteredItems.map((item) => (
-            <Card key={item.title} className="overflow-hidden group">
-              <CardHeader className="p-0">
-                <Image
-                  src={item.image}
-                  alt={item.title}
-                  width={600}
-                  height={400}
-                  className="object-cover w-full h-64 transition-transform duration-300 group-hover:scale-105"
-                  data-ai-hint={item.aiHint}
-                />
-              </CardHeader>
-              <CardContent className="p-6">
+            <div key={item.title} className="group flex flex-col items-center text-center">
+              <MobileMockup imgSrc={item.image} alt={item.title} aiHint={item.aiHint} />
+              <div className="mt-6">
                 <Badge variant="secondary">{item.category}</Badge>
-                <CardTitle className="mt-4 font-headline">{item.title}</CardTitle>
-              </CardContent>
-              <CardFooter>
-                 <Button variant="link" asChild className="p-0 h-auto text-primary">
-                  <a href="#">
-                    View Case Study
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </a>
-                </Button>
-              </CardFooter>
-            </Card>
+                <h3 className="mt-4 font-headline text-xl font-semibold">{item.title}</h3>
+                <div className="mt-4">
+                  <Button variant="link" asChild className="p-0 h-auto text-primary">
+                    <a href="#">
+                      View Case Study
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </a>
+                  </Button>
+                </div>
+              </div>
+            </div>
           ))}
         </div>
       </div>
