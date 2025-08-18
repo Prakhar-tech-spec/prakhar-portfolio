@@ -1,30 +1,10 @@
 "use client";
 
-import { AnimatedCarousel } from "./ui/logo-carousel";
-
 const stats = [
   { value: "50M+", label: "Video Views" },
   { value: "50K+", label: "Social Followers Gained" },
   { value: "20K+", label: "YouTube Subscribers" },
   { value: "2K+", label: "Organic Leads Generated" },
-];
-
-const partnerNames = [
-    "Canva",
-    "Notion",
-    "Github",
-    "Framer",
-    "Figma",
-    "Lovable",
-    "Cursor",
-    "Da Vinci Resolve",
-    "Supabase",
-    "Firebase",
-    "Vercel",
-    "Netlify",
-    "Loveart",
-    "After Effects",
-    "Adobe Premiere Pro"
 ];
 
 export function ClientsSection() {
@@ -45,12 +25,6 @@ export function ClientsSection() {
             ))}
           </div>
         </div>
-        <AnimatedCarousel
-          title="Meet Our Partners"
-          items={partnerNames}
-          itemClassName="text-2xl font-semibold"
-          padding="py-10"
-        />
       </div>
     </section>
   );
