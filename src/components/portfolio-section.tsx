@@ -5,7 +5,7 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/componen
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight } from "lucide-react";
 import { Button } from "./ui/button";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { MobileMockup } from "./ui/mobile-mockup";
 
@@ -72,6 +72,13 @@ const filterCategories = [
 
 export function PortfolioSection() {
   const [activeFilter, setActiveFilter] = useState("All Work");
+  const [rotations, setRotations] = useState<number[]>([]);
+
+  useEffect(() => {
+    // Generate random rotations only on the client-side
+    setRotations(portfolioItems.map(() => Math.floor(Math.random() * 10) - 5)); // -5 to 5 degrees
+  }, []);
+
 
   const filteredItems = activeFilter === "All Work"
     ? portfolioItems
@@ -103,8 +110,12 @@ export function PortfolioSection() {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-16 gap-x-8 mt-24">
-          {filteredItems.map((item) => (
-            <div key={item.title} className="group flex flex-col items-center text-center">
+          {filteredItems.map((item, index) => (
+            <div 
+              key={item.title} 
+              className="group flex flex-col items-center text-center transition-transform duration-300 hover:!rotate-0"
+              style={{ transform: `rotate(${rotations[index] || 0}deg)` }}
+            >
               <MobileMockup imgSrc={item.image} alt={item.title} aiHint={item.aiHint} />
               <div className="mt-6">
                 <Badge variant="secondary">{item.category}</Badge>
