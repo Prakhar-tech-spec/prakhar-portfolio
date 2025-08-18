@@ -80,10 +80,7 @@ export function PortfolioSection() {
     <section id="portfolio" className="py-20 md:py-32">
       <div className="container">
         <div className="text-center max-w-2xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold font-headline">Selected Works</h2>
-          <p className="mt-4 text-lg text-muted-foreground">
-            Take a look at some of our recent projects that showcase our skills and creativity.
-          </p>
+          <h2 className="text-3xl md:text-4xl font-bold font-headline">Work That Speaks</h2>
         </div>
 
         <div className="flex justify-center mt-12 mb-8">
