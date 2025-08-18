@@ -9,22 +9,22 @@ const stats = [
   { value: "2K+", label: "Organic Leads Generated" },
 ];
 
-const partnerLogos = [
-    "https://www.vectorlogo.zone/logos/canva/canva-icon.svg",
-    "https://www.vectorlogo.zone/logos/notion/notion-icon.svg",
-    "https://www.vectorlogo.zone/logos/github/github-icon.svg",
-    "https://www.vectorlogo.zone/logos/framer/framer-icon.svg",
-    "https://www.vectorlogo.zone/logos/figma/figma-icon.svg",
-    "https://uploads-ssl.webflow.com/62382103347513524953e344/62534552b7194178a935515c_lovable-logo-color.svg",
-    "https://www.vectorlogo.zone/logos/cursor/cursor-icon.svg",
-    "https://upload.wikimedia.org/wikipedia/commons/1/1a/DaVinci_Resolve_17_logo.svg",
-    "https://www.vectorlogo.zone/logos/supabase/supabase-icon.svg",
-    "https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg",
-    "https://www.vectorlogo.zone/logos/vercel/vercel-icon.svg",
-    "https://www.vectorlogo.zone/logos/netlify/netlify-icon.svg",
-    "https://uploads-ssl.webflow.com/624af7b00344d3202684803d/624af7b00344d31405848074_Artlogo.svg",
-    "https://upload.wikimedia.org/wikipedia/commons/c/cb/Adobe_After_Effects_CC_icon.svg",
-    "https://upload.wikimedia.org/wikipedia/commons/4/40/Adobe_Premiere_Pro_CC_icon.svg"
+const partnerNames = [
+    "Canva",
+    "Notion",
+    "Github",
+    "Framer",
+    "Figma",
+    "Lovable",
+    "Cursor",
+    "Da Vinci Resolve",
+    "Supabase",
+    "Firebase",
+    "Vercel",
+    "Netlify",
+    "Loveart",
+    "After Effects",
+    "Adobe Premiere Pro"
 ];
 
 export function ClientsSection() {
@@ -47,8 +47,8 @@ export function ClientsSection() {
         </div>
         <AnimatedCarousel
           title="Meet Our Partners"
-          logos={partnerLogos}
-          logoContainerHeight="h-10"
+          items={partnerNames}
+          itemClassName="text-2xl font-semibold"
           padding="py-10"
         />
       </div>
