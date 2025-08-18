@@ -44,7 +44,7 @@ const Step = ({ step, title, description, index, progress }: { step: string; tit
                 className="absolute w-2 h-2 rounded-full -left-[4.5px] top-1"
                 style={{ backgroundColor: dotColor }}
             />
-            <div className="absolute -left-12 md:-left-20 top-1 text-7xl md:text-8xl font-bold pointer-events-none text-stroke text-background opacity-20">
+            <div className="absolute -left-12 md:-left-20 top-1 text-7xl md:text-8xl font-bold pointer-events-none text-background opacity-20 text-stroke">
                 {step}
             </div>
             <motion.h3 style={{ color }} className="mb-2 text-3xl font-bold font-headline">{title}</motion.h3>
@@ -82,7 +82,7 @@ export function WorkProcessSection() {
 
         <div className="relative">
             <motion.div
-                className="absolute left-0 top-0 w-0.5 bg-border origin-top"
+                className="absolute left-0 top-0 w-0.5 bg-primary origin-top"
                 style={{ height: timelineHeight }}
             />
             <div className="pl-8">
