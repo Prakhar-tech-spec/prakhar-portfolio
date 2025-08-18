@@ -40,7 +40,7 @@ const Step = ({ step, title, description, index, progress }: { step: string; tit
 
     return (
         <motion.div style={{ opacity }} className="relative mb-24 last:mb-0">
-            <div className="absolute -left-12 md:-left-20 top-1 text-7xl md:text-8xl font-bold text-foreground/5 pointer-events-none">
+            <div className="absolute -left-12 md:-left-20 top-1 text-7xl md:text-8xl font-bold text-foreground/10 pointer-events-none">
                 {step}
             </div>
             <motion.h3 style={{ color }} className="mb-2 text-3xl font-bold font-headline">{title}</motion.h3>
@@ -56,8 +56,8 @@ export function WorkProcessSection() {
     offset: ["start center", "end center"],
   });
 
-  const timelineHeight = "100%"; 
-  const dotY = useTransform(scrollYProgress, [0, 1], [0, `calc(${timelineHeight} - 8px)`]);
+  const timelineHeight = useTransform(scrollYProgress, [0, 1], ['0%', '100%']);
+  const dotY = useTransform(scrollYProgress, [0, 1], ['0%', '100%']);
 
 
   return (
@@ -81,13 +81,13 @@ export function WorkProcessSection() {
         <div className="relative">
             <motion.div
                 className="absolute left-0 top-0 w-0.5 bg-primary origin-top"
-                style={{ scaleY: scrollYProgress, transformOrigin: 'top', height: '100%' }}
+                style={{ height: timelineHeight }}
             />
              <motion.div 
-                className="absolute -left-[3px] w-2 h-2 rounded-full bg-primary"
+                className="absolute left-[-3.5px] w-2 h-2 rounded-full bg-primary"
                 style={{ y: dotY }}
             />
-            <div className="md:pl-8">
+            <div className="pl-8">
               {processSteps.map((step, index) => {
                   return <Step key={step.step} {...step} index={index} progress={scrollYProgress} />;
               })}
