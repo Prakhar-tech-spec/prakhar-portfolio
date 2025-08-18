@@ -10,18 +10,21 @@ const stats = [
 ];
 
 const partnerLogos = [
-  "https://cdn.worldvectorlogo.com/logos/react-2.svg",
-  "https://cdn.worldvectorlogo.com/logos/next-js.svg",
-  "https://cdn.worldvectorlogo.com/logos/vercel.svg",
-  "https://cdn.worldvectorlogo.com/logos/typescript.svg",
-  "https://cdn.worldvectorlogo.com/logos/tailwindcss.svg",
-  "https://cdn.worldvectorlogo.com/logos/stripe-4.svg",
-  "https://cdn.worldvectorlogo.com/logos/notion-2.svg",
-  "https://cdn.worldvectorlogo.com/logos/github-icon-1.svg",
-  "https://cdn.worldvectorlogo.com/logos/figma-icon-one-color.svg",
-  "https://cdn.worldvectorlogo.com/logos/framer-motion.svg",
-  "https://cdn.worldvectorlogo.com/logos/storybook-1.svg",
-  "https://cdn.worldvectorlogo.com/logos/sanity.svg",
+    "https://www.vectorlogo.zone/logos/canva/canva-icon.svg",
+    "https://www.vectorlogo.zone/logos/notion/notion-icon.svg",
+    "https://www.vectorlogo.zone/logos/github/github-icon.svg",
+    "https://www.vectorlogo.zone/logos/framer/framer-icon.svg",
+    "https://www.vectorlogo.zone/logos/figma/figma-icon.svg",
+    "https://uploads-ssl.webflow.com/62382103347513524953e344/62534552b7194178a935515c_lovable-logo-color.svg",
+    "https://www.vectorlogo.zone/logos/cursor/cursor-icon.svg",
+    "https://upload.wikimedia.org/wikipedia/commons/1/1a/DaVinci_Resolve_17_logo.svg",
+    "https://www.vectorlogo.zone/logos/supabase/supabase-icon.svg",
+    "https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg",
+    "https://www.vectorlogo.zone/logos/vercel/vercel-icon.svg",
+    "https://www.vectorlogo.zone/logos/netlify/netlify-icon.svg",
+    "https://uploads-ssl.webflow.com/624af7b00344d3202684803d/624af7b00344d31405848074_Artlogo.svg",
+    "https://upload.wikimedia.org/wikipedia/commons/c/cb/Adobe_After_Effects_CC_icon.svg",
+    "https://upload.wikimedia.org/wikipedia/commons/4/40/Adobe_Premiere_Pro_CC_icon.svg"
 ];
 
 export function ClientsSection() {
