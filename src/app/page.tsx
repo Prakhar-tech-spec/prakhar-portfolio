@@ -4,10 +4,10 @@ import { HeroSection } from '@/components/hero-section';
 import { ServicesSection } from '@/components/services-section';
 import { PortfolioSection } from '@/components/portfolio-section';
 import { TestimonialsSection } from '@/components/testimonials-section';
-import { ContactSection } from '@/components/contact-section';
 import { Footer } from '@/components/footer';
 import { personalizeWelcomeMessage } from '@/ai/flows/personalize-welcome-message';
 import { WorkProcessSection } from '@/components/work-process-section';
+import { FaqSection } from '@/components/faq-section';
 
 export default async function Home() {
   // A personalized message can be generated here, but we will use a fallback for now.
@@ -22,7 +22,7 @@ export default async function Home() {
         <PortfolioSection />
         <WorkProcessSection />
         <TestimonialsSection />
-        <ContactSection />
+        <FaqSection />
       </main>
       <Footer />
     </div>

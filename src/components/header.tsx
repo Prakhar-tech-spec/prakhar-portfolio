@@ -13,7 +13,7 @@ const navLinks = [
     { href: '/#services', label: 'Services' },
     { href: '/#portfolio', label: 'Results' },
     { href: '/careers', label: 'Careers' },
-    { href: '/#contact', label: 'Contact' },
+    { href: '/#faq', label: 'FAQs' },
 ];
 
 const WeBrandYouLogo = () => (
