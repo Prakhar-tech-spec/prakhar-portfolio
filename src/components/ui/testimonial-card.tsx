@@ -20,10 +20,7 @@ export function TestimonialCard({
   className,
 }: TestimonialCardProps) {
   const cardContent = (
-    <div className={cn(
-        "flex flex-col justify-center h-full p-6 rounded-2xl",
-        (name === 'Emeka' || name === 'Shweena' || name === 'Jonty krishnani') ? 'bg-transparent text-foreground' : bgColor
-    )}>
+    <div className="flex flex-col justify-center h-full p-6 rounded-2xl bg-background/20">
       <blockquote className="flex flex-col justify-center h-full">
         <p className="text-sm md:text-base font-medium">
           &ldquo;{quote}&rdquo;
@@ -45,39 +42,17 @@ export function TestimonialCard({
         />
     </div>
   );
-
-  if (name === "Emeka" || name === "Shweena" || name === "Jonty krishnani") {
-    return (
-        <div
-            className={cn(
-            "grid grid-cols-2 items-center gap-4 p-4 rounded-2xl h-full",
-            bgColor,
-            className
-            )}
-        >
-            {name === 'Shweena' ? (
-            <>
-                {imageContent}
-                <div className={cn("h-full rounded-2xl", bgColor === "bg-pink-200/10" && "bg-pink-200/20")}>
-                    {cardContent}
-                </div>
-            </>
-            ) : (
-            <>
-                <div className={cn("h-full rounded-2xl", bgColor === "bg-green-200/10" && "bg-green-200/20", bgColor === "bg-yellow-200/10" && "bg-yellow-200/20")}>
-                    {cardContent}
-                </div>
-                {imageContent}
-            </>
-            )}
-        </div>
-    );
-  }
-
-
+  
   return (
-    <div className={cn("p-6 rounded-2xl h-full", bgColor, className)}>
-      {cardContent}
-    </div>
+      <div
+          className={cn(
+          "grid grid-cols-2 items-center gap-4 p-4 rounded-2xl h-full",
+          bgColor,
+          className
+          )}
+      >
+        {imageContent}
+        {cardContent}
+      </div>
   );
 }
