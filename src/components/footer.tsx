@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Linkedin } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Mail } from "lucide-react";
 import Link from "next/link";
 
 const WeBrandYouLogo = () => (
@@ -29,6 +29,9 @@ export function Footer() {
                     </a>
                     <a href="https://www.linkedin.com/in/prakhar-chaturvedi-a5520a253/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-muted-foreground hover:text-primary transition-colors">
                         <Linkedin className="h-5 w-5" />
+                    </a>
+                    <a href="mailto:prakharr.creatific@gmail.com" aria-label="Email" className="text-muted-foreground hover:text-primary transition-colors">
+                        <Mail className="h-5 w-5" />
                     </a>
                 </div>
             </div>
