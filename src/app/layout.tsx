@@ -1,7 +1,7 @@
 import type {Metadata} from 'next';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster"
-import { Inter, Lexend, Ephesis } from 'next/font/google'
+import { Inter, Lexend, Felipa } from 'next/font/google'
 import { CursorFollower } from '@/components/cursor-follower';
 
 export const metadata: Metadata = {
@@ -19,10 +19,10 @@ const lexend = Lexend({
   variable: '--font-lexend',
 })
 
-const ephesis = Ephesis({
+const felipa = Felipa({
   subsets: ['latin'],
   weight: '400',
-  variable: '--font-ephesis',
+  variable: '--font-felipa',
 })
 
 
@@ -33,7 +33,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark scroll-smooth">
-      <body className={`${inter.variable} ${lexend.variable} ${ephesis.variable} font-body antialiased`}>
+      <body className={`${inter.variable} ${lexend.variable} ${felipa.variable} font-body antialiased`}>
         <CursorFollower />
         {children}
         <Toaster />
