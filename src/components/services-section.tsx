@@ -43,7 +43,7 @@ export function ServicesSection() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
           {services.map((service) => (
-            <Card key={service.title} className="group text-center flex flex-col items-center p-6 bg-background border-2 border-transparent md:hover:bg-primary transition-all duration-300 transform md:hover:-translate-y-2 shadow-lg">
+            <Card key={service.title} className="group text-center flex flex-col items-center p-6 bg-background border-2 border-transparent md:hover:bg-primary transition-all duration-300 transform md:hover:-translate-y-2 shadow-lg md:hover:bg-[linear-gradient(45deg,rgba(0,0,0,0.05)_25%,transparent_25%,transparent_50%,rgba(0,0,0,0.05)_50%,rgba(0,0,0,0.05)_75%,transparent_75%,transparent)] md:hover:bg-[length:6px_6px]">
               <CardHeader className="p-0 pt-6">
                 <CardTitle className="mt-4 font-headline md:group-hover:font-cursive md:group-hover:text-primary-foreground">{service.title}</CardTitle>
               </CardHeader>
