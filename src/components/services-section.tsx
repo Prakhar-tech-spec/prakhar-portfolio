@@ -33,7 +33,9 @@ export function ServicesSection() {
     <section id="services" className="py-20 md:py-32 bg-secondary">
       <div className="container">
         <div className="text-center max-w-2xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold font-headline">Stand Out. Everywhere</h2>
+          <h2 className="text-3xl md:text-4xl font-bold font-headline">
+            Stand Out. <span className="text-primary font-cursive">Everywhere.</span>
+          </h2>
           <p className="mt-4 text-lg text-muted-foreground">
             More visibility. More credibility. More growth.
           </p>
