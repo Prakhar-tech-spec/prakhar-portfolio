@@ -63,6 +63,7 @@
     --chart-3: 0 0% 40%;
     --chart-4: 0 0% 20%;
     --chart-5: 0 0% 10%;
+    --radius: 0.5rem;
     --sidebar-background: 0 0% 0%;
     --sidebar-foreground: 0 0% 100%;
     --sidebar-primary: 0 0% 100%;
@@ -86,5 +87,10 @@
 @layer utilities {
   .text-stroke {
     -webkit-text-stroke: 1px hsl(var(--foreground));
+    text-shadow: 
+      1px 1px 0 hsl(var(--foreground)),
+      -1px -1px 0 hsl(var(--foreground)),
+      1px -1px 0 hsl(var(--foreground)),
+      -1px 1px 0 hsl(var(--foreground));
   }
 }

@@ -1,58 +1,196 @@
+
 "use client";
 
-import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
+import { cn } from "@/lib/utils";
+import React, { useEffect, useState, useRef } from "react";
+import { TestimonialCard } from "./ui/testimonial-card";
 
 const testimonials = [
   {
-    quote: "Corelk transformed our online presence. Their design sense is impeccable, and the results speak for themselves. Highly recommended!",
-    name: "Jane Doe",
-    designation: "CEO, Tech Solutions Inc.",
-    src: "https://placehold.co/500x500.png",
-    aiHint: "woman portrait"
+    quote: "They have helped me achieve a consistent 50% MOM growth for my Personal brand. They handle everything from content ideation to uploading, requiring just an hour of my time each week.",
+    name: "Emeka",
+    image: "https://placehold.co/150x150.png",
+    aiHint: "man portrait",
+    bgColor: "bg-green-200/10",
   },
   {
-    quote: "Working with this team was a pleasure. They are true professionals who understand user needs and deliver outstanding web experiences.",
-    name: "John Smith",
-    designation: "Marketing Director, Creative Co.",
-    src: "https://placehold.co/500x500.png",
-    aiHint: "man portrait"
+    quote: "I Grew from 0-10k in just 30 Days, It was possible only because of the Amazing team at Visualview Media",
+    name: "Shweena",
+    image: "https://placehold.co/150x150.png",
+    aiHint: "woman smiling",
+    bgColor: "bg-pink-200/10",
   },
   {
-    quote: "The new branding and website have received amazing feedback. Our user engagement has skyrocketed since the launch.",
-    name: "Emily White",
-    designation: "Founder, Health & Wellness Hub",
-    src: "https://placehold.co/500x500.png",
-    aiHint: "woman smiling"
+    quote: "Visualview Media is helping me leverage my YouTube channel to sell courses, and I've seen a 10x increase in revenue using their strategy and management services. Their personal branding and content strategies are top-notch.",
+    name: "The AI Dude",
+    image: "https://placehold.co/150x150.png",
+    aiHint: "man with glasses",
+    bgColor: "bg-blue-200/10",
   },
   {
-      quote:
-        "Outstanding support and robust features. It's rare to find a product that delivers on all its promises.",
-      name: "James Kim",
-      designation: "Engineering Lead at DataPro",
-      src: "https://placehold.co/500x500.png",
-      aiHint: "man portrait smiling"
-    },
-    {
-      quote:
-        "The scalability and performance have been game-changing for our organization. Highly recommend to any growing business.",
-      name: "Lisa Thompson",
-      designation: "VP of Technology at FutureNet",
-      src: "https://placehold.co/500x500.png",
-      aiHint: "woman portrait professional"
-    },
+    quote: "Monetised my Yt channel with just 4 videos, Visualview Media Team never disappoints",
+    name: "Jonty krishnani",
+    image: "https://placehold.co/150x150.png",
+    aiHint: "man with microphone",
+    bgColor: "bg-yellow-200/10",
+  },
+  {
+    quote: "Visualview Media's content strategy is unmatched. I went from 0-15k+ subscribers on YouTube in just 4 months using their strategy.",
+    name: "Visualview Follower",
+    image: "https://placehold.co/150x150.png",
+    aiHint: "person smiling",
+    bgColor: "bg-purple-200/10",
+  }
 ];
 
+
+const InfiniteMovingCards = ({
+  items,
+  direction = "left",
+  speed = "slow",
+  pauseOnHover = true,
+  className,
+}: {
+  items: {
+    quote: string;
+    name: string;
+    image: string;
+    aiHint: string;
+    bgColor: string;
+  }[];
+  direction?: "left" | "right";
+  speed?: "fast" | "normal" | "slow";
+  pauseOnHover?: boolean;
+  className?: string;
+}) => {
+  const containerRef = React.useRef<HTMLDivElement>(null);
+  const scrollerRef = React.useRef<HTMLUListElement>(null);
+
+  useEffect(() => {
+    addAnimation();
+  }, []);
+  
+  const [start, setStart] = useState(false);
+  
+  function addAnimation() {
+    if (containerRef.current && scrollerRef.current) {
+      const scrollerContent = Array.from(scrollerRef.current.children);
+
+      scrollerContent.forEach((item) => {
+        const duplicatedItem = item.cloneNode(true);
+        if (scrollerRef.current) {
+          scrollerRef.current.appendChild(duplicatedItem);
+        }
+      });
+
+      getDirection();
+      getSpeed();
+      setStart(true);
+    }
+  }
+
+  const getDirection = () => {
+    if (containerRef.current) {
+      if (direction === "left") {
+        containerRef.current.style.setProperty(
+          "--animation-direction",
+          "forwards"
+        );
+      } else {
+        containerRef.current.style.setProperty(
+          "--animation-direction",
+          "reverse"
+        );
+      }
+    }
+  };
+
+  const getSpeed = () => {
+    if (containerRef.current) {
+      if (speed === "fast") {
+        containerRef.current.style.setProperty("--animation-duration", "20s");
+      } else if (speed === "normal") {
+        containerRef.current.style.setProperty("--animation-duration", "40s");
+      } else {
+        containerRef.current.style.setProperty("--animation-duration", "80s");
+      }
+    }
+  };
+
+  return (
+    <div
+      ref={containerRef}
+      className={cn(
+        "scroller relative z-20 w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]",
+        className
+      )}
+    >
+      <ul
+        ref={scrollerRef}
+        className={cn(
+          " flex min-w-full shrink-0 gap-4 py-4 w-max flex-nowrap",
+          start && "animate-scroll ",
+          pauseOnHover && "hover:[animation-play-state:paused]"
+        )}
+      >
+        {items.map((item, idx) => (
+          <li
+            className="w-[350px] max-w-full relative rounded-2xl border border-b-0 flex-shrink-0 md:w-[450px]"
+            key={item.name}
+          >
+            <TestimonialCard {...item} />
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+
 export function TestimonialsSection() {
+  const testimonialsRowOne = testimonials.slice(0, 3);
+  const testimonialsRowTwo = testimonials.slice(2);
+
   return (
     <section id="testimonials" className="py-20 md:py-32 bg-secondary">
-      <div className="container">
+      <div className="container mx-auto px-4">
         <div className="text-center max-w-2xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold font-headline">What Our Clients Say</h2>
+          <h2 className="text-3xl md:text-4xl font-bold font-headline">
+            Our <span className="text-primary font-cursive relative">
+              Clients
+              <svg
+                width="100%"
+                height="20"
+                viewBox="0 0 160 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="absolute -bottom-2 left-0"
+              >
+                <path
+                  d="M1.08276 16.1423C52.0828 4.14233 134.083 -4.85767 158.583 11.1423"
+                  stroke="hsl(var(--primary))"
+                  strokeWidth="4"
+                  strokeLinecap="round"
+                />
+              </svg>
+            </span>
+          </h2>
           <p className="mt-4 text-lg text-muted-foreground">
             We are proud to have worked with some amazing clients. Here's what they think of us.
           </p>
         </div>
-        <AnimatedTestimonials testimonials={testimonials} />
+      </div>
+      <div className="relative flex flex-col items-center justify-center gap-8 mt-12 overflow-hidden">
+        <InfiniteMovingCards
+          items={testimonialsRowOne}
+          direction="right"
+          speed="slow"
+        />
+        <InfiniteMovingCards
+          items={testimonialsRowTwo}
+          direction="left"
+          speed="slow"
+        />
       </div>
     </section>
   );
