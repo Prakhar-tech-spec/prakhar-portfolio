@@ -58,7 +58,7 @@ export const AnimatedCarousel = ({
   const logoImageSizeClasses = `${logoImageWidth} ${logoImageHeight} ${logoMaxWidth} ${logoMaxHeight}`.trim();
 
   return (
-    <div className={`w-full ${padding} bg-background ${containerClassName}`}>
+    <div className={`w-full ${padding} ${containerClassName}`}>
       <div className="container mx-auto">
         <div className={`flex flex-col ${spacing}`}>
           <h2 className={`text-xl md:text-3xl md:text-5xl tracking-tighter lg:max-w-xl font-regular text-left ml-2 text-foreground ${titleClassName}`}>
