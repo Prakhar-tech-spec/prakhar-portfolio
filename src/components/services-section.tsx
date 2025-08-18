@@ -42,12 +42,14 @@ export function ServicesSection() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
           {services.map((service) => (
-            <Card key={service.title} className="text-center flex flex-col items-center p-6 bg-background border-2 border-transparent hover:border-primary transition-all duration-300 transform hover:-translate-y-2 shadow-lg">
+            <Card key={service.title} className="group text-center flex flex-col items-center p-6 bg-background border-2 border-transparent hover:border-primary transition-all duration-300 transform hover:-translate-y-2 shadow-lg">
               <CardHeader className="p-0 pt-6">
                 <CardTitle className="mt-4 font-headline">{service.title}</CardTitle>
               </CardHeader>
-              <CardContent className="flex-1 flex items-center">
-                <p className="text-muted-foreground">{service.description}</p>
+              <CardContent className="flex-1 flex items-center transition-all duration-300">
+                  <p className="text-muted-foreground max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out">
+                    {service.description}
+                  </p>
               </CardContent>
             </Card>
           ))}
