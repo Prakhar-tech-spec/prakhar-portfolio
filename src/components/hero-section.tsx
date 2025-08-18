@@ -62,7 +62,7 @@ export function HeroSection() {
           </div>
         </div>
         <div className="relative flex justify-center items-center">
-          <div className="absolute w-full h-full max-w-[300px] max-h-[300px] md:max-w-[500px] md:max-h-[500px] bg-primary/10 rounded-lg blur-3xl z-0"></div>
+          <div className="absolute w-full h-full max-w-[300px] max-h-[300px] md:max-w-[500px] md:max-h-[500px] bg-primary/20 rounded-lg blur-3xl z-0"></div>
            <Dot color="bg-primary" position="top-1/4 left-1/4" />
            <Dot color="bg-primary" position="top-1/2 right-1/4" />
            <Dot color="bg-primary" position="bottom-1/4 left-1/3" />
@@ -83,7 +83,7 @@ export function HeroSection() {
               Hi, I'm Prakhar
             </Badge>
           </div>
-          <Badge variant="outline" className="absolute bottom-4 -right-4 md:bottom-8 md:-right-4 z-20 text-xs md:text-lg py-2 px-4 bg-background/80 backdrop-blur border-border text-foreground shadow-lg flex items-center gap-2 transition-colors hover:bg-primary/90 animate-float" style={{ animationDelay: '1.5s' }}>
+          <Badge variant="outline" className="absolute bottom-4 -right-4 md:bottom-8 md:-right-4 z-20 text-xs md:text-lg py-2 px-4 bg-background/80 backdrop-blur border-border text-foreground shadow-lg flex items-center gap-2 transition-colors animate-float" style={{ animationDelay: '1.5s' }}>
             <Briefcase className="h-4 w-4 md:h-5 md:h-5 text-primary"/>
             2+ Years of Experience
           </Badge>
