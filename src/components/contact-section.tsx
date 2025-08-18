@@ -70,7 +70,7 @@ export function ContactSection() {
             Have a project in mind or just want to say hello? Fill out the form or use the contact information below. We'd love to hear from you.
           </p>
           <Button asChild className="w-full bg-primary hover:bg-primary/90 text-primary-foreground" size="lg">
-            <a href="https://calendly.com/arpanadventure/30min" target="_blank" rel="noopener noreferrer">
+            <a href="https://cal.com/prakhar-creatific/30min" target="_blank" rel="noopener noreferrer">
               <CalendarDays className="mr-2 h-5 w-5" />
               Book a Free Strategy Call
             </a>

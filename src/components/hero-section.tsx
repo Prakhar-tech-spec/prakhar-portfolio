@@ -40,7 +40,7 @@ export function HeroSection() {
           </p>
           <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 w-full sm:w-auto">
             <Button size="lg" asChild className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full">
-              <a href="https://calendly.com/arpanadventure/30min" target="_blank" rel="noopener noreferrer">Free Strategy Call</a>
+              <a href="https://cal.com/prakhar-creatific/30min" target="_blank" rel="noopener noreferrer">Free Strategy Call</a>
             </Button>
             <Button size="lg" variant="link" asChild className="text-foreground">
               <Link href="#portfolio" onClick={(e) => handleScroll(e, '#portfolio')}>
