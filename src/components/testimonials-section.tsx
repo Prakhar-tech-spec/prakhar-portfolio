@@ -149,7 +149,7 @@ const InfiniteMovingCards = ({
       >
         {items.map((item, idx) => (
           <li
-            className="w-[350px] max-w-full relative rounded-2xl border-b-0 flex-shrink-0 md:w-[450px]"
+            className="w-[400px] max-w-full relative rounded-2xl border-b-0 flex-shrink-0 md:w-[550px]"
             key={item.name + idx}
           >
             <TestimonialCard {...item} />

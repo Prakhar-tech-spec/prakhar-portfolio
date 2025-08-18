@@ -20,7 +20,7 @@ export function TestimonialCard({
   className,
 }: TestimonialCardProps) {
   const cardContent = (
-    <div className="flex flex-col justify-center h-full p-6 rounded-2xl bg-background/20">
+    <div className="flex flex-col justify-center p-6 rounded-2xl bg-background/20 h-full">
       <blockquote className="flex flex-col justify-center h-full">
         <p className="text-sm md:text-base font-medium">
           &ldquo;{quote}&rdquo;
@@ -31,7 +31,7 @@ export function TestimonialCard({
   );
 
   const imageContent = (
-    <div className="relative w-full h-full aspect-square rounded-2xl overflow-hidden">
+    <div className="relative w-full h-[150px] rounded-2xl overflow-hidden">
         <Image
             src={image}
             alt={name}
@@ -46,7 +46,7 @@ export function TestimonialCard({
   return (
       <div
           className={cn(
-          "grid grid-cols-2 items-center gap-4 p-4 rounded-2xl h-full",
+          "grid grid-cols-[1fr_2fr] items-center gap-4 p-4 rounded-2xl h-full",
           bgColor,
           className
           )}
