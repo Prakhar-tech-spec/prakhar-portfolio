@@ -4,6 +4,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import React, { useEffect, useState } from "react";
 import { Meteors } from "./ui/meteors";
+import { UnderlinedText } from "./ui/underlined-text";
 
 const services = [
   {
@@ -45,7 +46,7 @@ export function ServicesSection() {
       <div className="container">
         <div className="text-center max-w-2xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold font-headline">
-            Stand Out. <span className="text-primary font-cursive">Everywhere.</span>
+            Stand Out. <UnderlinedText>Everywhere.</UnderlinedText>
           </h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">

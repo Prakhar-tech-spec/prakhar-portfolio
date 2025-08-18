@@ -5,6 +5,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import React, { useRef } from "react";
 import { Button } from "./ui/button";
 import { ArrowRight } from "lucide-react";
+import { UnderlinedText } from "./ui/underlined-text";
 
 const processSteps = [
   {
@@ -44,7 +45,7 @@ const Step = ({ step, title, description, index, progress }: { step: string; tit
                 className="absolute w-2 h-2 rounded-full -left-[4.5px] top-1"
                 style={{ backgroundColor: dotColor }}
             />
-            <div className="absolute -left-12 md:-left-20 top-1 text-7xl md:text-8xl font-bold pointer-events-none text-background opacity-20 text-stroke">
+            <div className="absolute -left-12 md:-left-20 top-1 text-7xl md:text-8xl font-bold pointer-events-none text-stroke text-background opacity-20">
                 {step}
             </div>
             <motion.h3 style={{ color }} className="mb-2 text-3xl font-bold font-headline">{title}</motion.h3>
@@ -67,7 +68,7 @@ export function WorkProcessSection() {
       <div className="container grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
         <div className="md:sticky md:top-28 h-max">
             <h2 className="text-4xl md:text-5xl font-bold font-headline">
-                Our <span className="text-primary font-cursive">Creative</span> Journey
+                Our <UnderlinedText>Creative</UnderlinedText> Journey
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">
                 The process we follow to help you GROW and SELL on social media that takes just 4hrs/month of your time.

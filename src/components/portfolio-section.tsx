@@ -8,6 +8,7 @@ import { Button } from "./ui/button";
 import React, { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { MobileMockup } from "./ui/mobile-mockup";
+import { UnderlinedText } from "./ui/underlined-text";
 
 const portfolioItems = [
   {
@@ -88,7 +89,7 @@ export function PortfolioSection() {
     <section id="portfolio" className="py-20 md:py-32">
       <div className="container">
         <div className="text-center max-w-2xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold font-headline">Work That <span className="text-primary font-cursive">Speaks</span></h2>
+          <h2 className="text-3xl md:text-4xl font-bold font-headline">Work That <UnderlinedText>Speaks</UnderlinedText></h2>
         </div>
 
         <div className="flex justify-center mt-12 mb-8">

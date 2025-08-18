@@ -4,6 +4,7 @@
 import { cn } from "@/lib/utils";
 import React, { useEffect, useState, useRef } from "react";
 import { TestimonialCard } from "./ui/testimonial-card";
+import { UnderlinedText } from "./ui/underlined-text";
 
 const testimonials = [
   {
@@ -170,24 +171,7 @@ export function TestimonialsSection() {
       <div className="container mx-auto px-4">
         <div className="text-center max-w-2xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold font-headline">
-            Our <span className="text-primary font-cursive relative">
-              Clients
-              <svg
-                width="100%"
-                height="20"
-                viewBox="0 0 160 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="absolute -bottom-2 left-0"
-              >
-                <path
-                  d="M1.08276 16.1423C52.0828 4.14233 134.083 -4.85767 158.583 11.1423"
-                  stroke="hsl(var(--primary))"
-                  strokeWidth="4"
-                  strokeLinecap="round"
-                />
-              </svg>
-            </span>
+            Our <UnderlinedText>Clients</UnderlinedText>
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
             We are proud to have worked with some amazing clients. Here's what they think of us.

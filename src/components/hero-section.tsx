@@ -6,6 +6,7 @@ import { Badge } from '@/components/ui/badge';
 import { ArrowRight, Briefcase, Instagram, Facebook, Linkedin } from 'lucide-react';
 import { ClientsSection } from './clients-section';
 import Link from 'next/link';
+import { UnderlinedText } from './ui/underlined-text';
 
 const Dot = ({ color, position }: { color: string, position: string }) => (
   <div className={`absolute ${position} w-2 h-2 md:w-3 md:h-3 rounded-full ${color} opacity-50`}></div>
@@ -27,9 +28,9 @@ export function HeroSection() {
         <div className="flex flex-col items-center lg:items-start gap-6 text-center lg:text-left">
           <h1 className="text-4xl md:text-6xl font-bold font-headline tracking-tight">
             Let's make your{' '}
-            <span className="text-primary font-cursive">
+            <UnderlinedText>
               Personal Brand
-            </span>{' '}
+            </UnderlinedText>{' '}
             unforgettable
           </h1>
           <p className="text-lg text-muted-foreground font-bold italic">
