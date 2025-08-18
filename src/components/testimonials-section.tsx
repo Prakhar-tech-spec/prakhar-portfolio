@@ -183,11 +183,13 @@ export function TestimonialsSection() {
           items={testimonialsRowOne}
           direction="right"
           speed="normal"
+          pauseOnHover={false}
         />
         <InfiniteMovingCards
           items={testimonialsRowTwo}
           direction="left"
           speed="normal"
+          pauseOnHover={false}
         />
       </div>
     </section>
