@@ -5,7 +5,7 @@ import {
   Target,
   TargetAndTransition,
   Transition,
-} from 'motion/react';
+} from 'framer-motion';
 
 export type TextRollProps = {
   children: string;
