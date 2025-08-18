@@ -112,7 +112,9 @@ export function PortfolioSection() {
                         onClick={() => setActiveFilter(filter)}
                         className={cn(
                             "rounded-full px-4 py-2 text-sm transition-colors",
-                            activeFilter === filter ? 'bg-background text-foreground hover:bg-background/90' : 'text-muted-foreground'
+                            activeFilter === filter 
+                                ? 'bg-background text-foreground hover:bg-background/90' 
+                                : 'text-muted-foreground hover:text-accent-foreground'
                         )}
                     >
                         {filter}
@@ -124,7 +126,7 @@ export function PortfolioSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-16 gap-x-8 mt-24">
           {filteredItems.map((item) => (
             <div 
-              key={item.title} 
+              key={item.id} 
               className="group flex flex-col items-center text-center transition-transform duration-300 hover:!rotate-0"
               style={{ transform: `rotate(${rotations[item.id] || 0}deg)` }}
             >
