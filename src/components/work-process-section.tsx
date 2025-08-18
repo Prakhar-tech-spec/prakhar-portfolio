@@ -57,7 +57,7 @@ export function WorkProcessSection() {
     offset: ["start end", "end start"],
   });
 
-  const scaleX = useSpring(scrollYProgress, {
+  const scaleY = useSpring(scrollYProgress, {
     stiffness: 100,
     damping: 30,
     restDelta: 0.001
@@ -77,10 +77,10 @@ export function WorkProcessSection() {
 
         <div ref={ref} className="mt-16 relative max-w-2xl mx-auto">
             <motion.div 
-                style={{ scaleY: scaleX }}
-                className="absolute left-0 top-0 w-1 h-full bg-primary origin-top"
+                style={{ scaleY: scaleY }}
+                className="absolute left-[3px] top-0 w-1 h-full bg-primary origin-top"
             />
-            <ol className="relative">
+            <ol className="relative z-10">
                 {processSteps.map((step) => (
                     <Step key={step.title} {...step} />
                 ))}
