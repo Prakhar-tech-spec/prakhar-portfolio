@@ -73,7 +73,7 @@ export const AnimatedCarousel = ({
                       <img
                         src={typeof logo === 'string' ? logo : logo}
                         alt={`Logo ${index + 1}`}
-                        className={`${logoImageSizeClasses} object-contain filter brightness-0 dark:brightness-0 dark:invert transition-all duration-300 group-hover:filter-none group-hover:saturate-200 group-hover:hue-rotate-[50deg]`}
+                        className={`${logoImageSizeClasses} object-contain filter brightness-0 dark:brightness-0 dark:invert transition-all duration-300 group-hover:grayscale-0 group-hover:brightness-100 group-hover:sepia group-hover:saturate-[5000%] group-hover:hue-rotate-[75deg]`}
                       />
                     </div>
                   </CarouselItem>
