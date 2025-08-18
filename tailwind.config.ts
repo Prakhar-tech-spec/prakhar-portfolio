@@ -19,7 +19,7 @@ export default {
       fontFamily: {
         body: ['var(--font-inter)', 'sans-serif'],
         headline: ['var(--font-lexend)', 'sans-serif'],
-        cursive: ['var(--font-italianno)', 'cursive'],
+        cursive: ['var(--font-ephesis)', 'cursive'],
         code: ['monospace'],
       },
       colors: {
