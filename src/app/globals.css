@@ -87,9 +87,9 @@
   .text-stroke {
     -webkit-text-stroke: 1px hsl(var(--foreground));
     text-shadow: 
-      -1px -1px 0 hsl(var(--muted-foreground)),  
-       1px -1px 0 hsl(var(--muted-foreground)),
-      -1px  1px 0 hsl(var(--muted-foreground)),
-       1px  1px 0 hsl(var(--muted-foreground));
+      -1px -1px 0 hsl(var(--foreground)),  
+       1px -1px 0 hsl(var(--foreground)),
+      -1px  1px 0 hsl(var(--foreground)),
+       1px  1px 0 hsl(var(--foreground));
   }
 }

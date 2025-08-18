@@ -32,15 +32,19 @@ const processSteps = [
 const Step = ({ step, title, description, index, progress }: { step: string; title: string; description: string; index: number, progress: any }) => {
     const stepCount = processSteps.length;
     const start = index / stepCount;
-    const end = (index + 1) / stepCount;
+    const end = start + 1 / stepCount;
     
-    // Animate opacity and color based on the scroll progress for the current step
     const opacity = useTransform(progress, [start, start + 0.05, end - 0.05, end], [0.3, 1, 1, 0.3]);
     const color = useTransform(progress, [start, start + 0.05, end - 0.05, end], ['hsl(var(--muted-foreground))', 'hsl(var(--primary))', 'hsl(var(--primary))', 'hsl(var(--muted-foreground))']);
+    const dotColor = useTransform(progress, [start, start + 0.05, end - 0.05, end], ['hsl(var(--muted))', 'hsl(var(--primary))', 'hsl(var(--primary))', 'hsl(var(--muted))']);
 
     return (
         <motion.div style={{ opacity }} className="relative mb-24 last:mb-0">
-            <div className="absolute -left-12 md:-left-20 top-1 text-7xl md:text-8xl font-bold pointer-events-none text-stroke text-transparent opacity-20">
+            <motion.div 
+                className="absolute w-2 h-2 rounded-full -left-[4.5px] top-1"
+                style={{ backgroundColor: dotColor }}
+            />
+            <div className="absolute -left-12 md:-left-20 top-1 text-7xl md:text-8xl font-bold pointer-events-none text-stroke text-background opacity-20">
                 {step}
             </div>
             <motion.h3 style={{ color }} className="mb-2 text-3xl font-bold font-headline">{title}</motion.h3>
@@ -57,8 +61,6 @@ export function WorkProcessSection() {
   });
 
   const timelineHeight = useTransform(scrollYProgress, [0, 1], ['0%', '100%']);
-  const dotY = useTransform(scrollYProgress, [0, 1], ['0%', '100%']);
-
 
   return (
     <section id="process" className="py-20 md:py-32" ref={containerRef}>
@@ -80,12 +82,8 @@ export function WorkProcessSection() {
 
         <div className="relative">
             <motion.div
-                className="absolute left-0 top-0 w-0.5 bg-primary origin-top"
+                className="absolute left-0 top-0 w-0.5 bg-border origin-top"
                 style={{ height: timelineHeight }}
-            />
-             <motion.div 
-                className="absolute left-[-3.5px] w-2 h-2 rounded-full bg-primary"
-                style={{ y: dotY }}
             />
             <div className="pl-8">
               {processSteps.map((step, index) => {
