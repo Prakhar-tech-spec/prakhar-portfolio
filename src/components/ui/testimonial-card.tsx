@@ -31,7 +31,7 @@ export function TestimonialCard({
   );
 
   const imageContent = (
-    <div className="relative w-full h-full rounded-2xl overflow-hidden">
+    <div className="hidden md:block relative w-full h-full rounded-2xl overflow-hidden">
         <Image
             src={image}
             alt={name}
@@ -46,12 +46,14 @@ export function TestimonialCard({
   return (
       <div
           className={cn(
-          "grid grid-cols-[1fr_2fr] items-center gap-4 p-4 rounded-2xl h-full bg-secondary border border-foreground/20",
+          "grid md:grid-cols-[1fr_2fr] items-center gap-4 p-4 rounded-2xl h-full bg-secondary border border-foreground/20",
           className
           )}
       >
         {imageContent}
-        {cardContent}
+        <div className="md:col-span-1">
+          {cardContent}
+        </div>
       </div>
   );
 }
