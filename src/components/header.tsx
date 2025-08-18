@@ -173,7 +173,7 @@ export function Header() {
             <div className="hidden md:flex items-center gap-4">
               <NavMenu />
               <Button asChild size="sm" className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full">
-                <a href="https://calendly.com/arpanadventure/30min" target="_blank" rel="noopener noreferrer">Book a Call</a>
+                <a href="https://calendly.com/arpanadventure/30min" target="_blank" rel="noopener noreferrer">Free Strategy Call</a>
               </Button>
             </div>
       
@@ -210,7 +210,7 @@ export function Header() {
                         </motion.a>
                     ))}
                      <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full mt-4">
-                        <a href="https://calendly.com/arpanadventure/30min" target="_blank" rel="noopener noreferrer">Book a Call</a>
+                        <a href="https://calendly.com/arpanadventure/30min" target="_blank" rel="noopener noreferrer">Free Strategy Call</a>
                     </Button>
                 </nav>
             </motion.div>
