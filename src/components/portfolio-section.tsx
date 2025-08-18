@@ -81,7 +81,7 @@ export function PortfolioSection() {
 
 
   const filteredItems = activeFilter === "All Work"
-    ? portfolioItems
+    ? portfolioItems.slice(0, 3)
     : portfolioItems.filter((item) => item.category === activeFilter);
 
   return (
