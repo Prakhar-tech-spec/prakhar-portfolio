@@ -40,6 +40,20 @@ const testimonials = [
     image: "https://placehold.co/150x150.png",
     aiHint: "person smiling",
     bgColor: "bg-purple-200/10",
+  },
+  {
+    quote: "Working with them was a breeze. They understood my vision and executed it flawlessly. The results speak for themselves.",
+    name: "Alex Johnson",
+    image: "https://placehold.co/150x150.png",
+    aiHint: "smiling person",
+    bgColor: "bg-teal-200/10",
+  },
+  {
+    quote: "The best in the business! Their creative approach and attention to detail are second to none. Highly recommended!",
+    name: "Samantha Lee",
+    image: "https://placehold.co/150x150.png",
+    aiHint: "woman portrait",
+    bgColor: "bg-orange-200/10",
   }
 ];
 
@@ -135,8 +149,8 @@ const InfiniteMovingCards = ({
       >
         {items.map((item, idx) => (
           <li
-            className="w-[350px] max-w-full relative rounded-2xl border border-b-0 flex-shrink-0 md:w-[450px]"
-            key={item.name}
+            className="w-[350px] max-w-full relative rounded-2xl border-b-0 flex-shrink-0 md:w-[450px]"
+            key={item.name + idx}
           >
             <TestimonialCard {...item} />
           </li>
@@ -148,8 +162,8 @@ const InfiniteMovingCards = ({
 
 
 export function TestimonialsSection() {
-  const testimonialsRowOne = testimonials.slice(0, 3);
-  const testimonialsRowTwo = testimonials.slice(2);
+  const testimonialsRowOne = testimonials.slice(0, 4);
+  const testimonialsRowTwo = testimonials.slice(3);
 
   return (
     <section id="testimonials" className="py-20 md:py-32 bg-secondary">
