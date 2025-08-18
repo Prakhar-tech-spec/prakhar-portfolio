@@ -18,7 +18,7 @@ export default function CareersPage() {
                 <div className="border rounded-lg p-6 mb-6">
                     <h2 className="text-2xl font-bold font-headline">No Open Positions Currently</h2>
                     <p className="text-muted-foreground mt-2">
-                        We don't have any open positions right now, but we're always on the lookout for great talent. If you're passionate about what we do, feel free to send us your resume and a cover letter to <a href="mailto:careers@corelk.com" className="text-primary hover:underline">careers@corelk.com</a>. We'll keep your information on file for future opportunities.
+                        We don't have any open positions right now, but we're always on the lookout for great talent. If you're passionate about what we do, feel free to send us your resume and a cover letter to <a href="mailto:prakharr.creatific@gmail.com" className="text-primary hover:underline">prakharr.creatific@gmail.com</a>. We'll keep your information on file for future opportunities.
                     </p>
                 </div>
             </div>
