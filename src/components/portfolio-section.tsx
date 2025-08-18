@@ -15,42 +15,42 @@ const portfolioItems = [
     id: 1,
     title: "E-commerce Platform Redesign",
     category: "Web & App",
-    image: "https://placehold.co/375x812.png",
+    image: "https://placehold.co/270x480.png",
     aiHint: "website screenshot"
   },
   {
     id: 2,
     title: "SaaS Dashboard Development",
     category: "Web & App",
-    image: "https://placehold.co/375x812.png",
+    image: "https://placehold.co/270x480.png",
     aiHint: "dashboard analytics"
   },
   {
     id: 3,
     title: "Promotional Video for New Product",
     category: "Video Editing",
-    image: "https://placehold.co/375x812.png",
+    image: "https://placehold.co/270x480.png",
     aiHint: "product video"
   },
   {
     id: 4,
     title: "Social Media Campaign Visuals",
     category: "Social Media",
-    image: "https://placehold.co/375x812.png",
+    image: "https://placehold.co/270x480.png",
     aiHint: "social media post"
   },
   {
     id: 5,
     title: "YouTube Channel Thumbnail Pack",
     category: "Graphics & Thumbnails",
-    image: "https://placehold.co/375x812.png",
+    image: "https://placehold.co/270x480.png",
     aiHint: "youtube thumbnail"
   },
   {
     id: 8,
     title: "Instagram Content Creation",
     category: "Social Media",
-    image: "https://placehold.co/375x812.png",
+    image: "https://placehold.co/270x480.png",
     aiHint: "instagram post"
   },
 ];
