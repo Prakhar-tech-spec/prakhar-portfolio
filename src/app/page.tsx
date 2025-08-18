@@ -7,6 +7,7 @@ import { TestimonialsSection } from '@/components/testimonials-section';
 import { ContactSection } from '@/components/contact-section';
 import { Footer } from '@/components/footer';
 import { personalizeWelcomeMessage } from '@/ai/flows/personalize-welcome-message';
+import { WorkProcessSection } from '@/components/work-process-section';
 
 export default async function Home() {
   // A personalized message can be generated here, but we will use a fallback for now.
@@ -19,6 +20,7 @@ export default async function Home() {
         <HeroSection />
         <ServicesSection />
         <PortfolioSection />
+        <WorkProcessSection />
         <TestimonialsSection />
         <ContactSection />
       </main>
