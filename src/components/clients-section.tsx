@@ -45,14 +45,7 @@ export function ClientsSection() {
         <AnimatedCarousel
           title="Meet Our Partners"
           logos={partnerLogos}
-          autoPlay={true}
-          autoPlayInterval={4000}
-          itemsPerViewMobile={3}
-          itemsPerViewDesktop={6}
-          logoContainerWidth="w-40"
-          logoContainerHeight="h-20"
-          logoImageWidth="w-auto"
-          logoImageHeight="h-10"
+          logoContainerHeight="h-10"
           padding="py-10"
         />
       </div>

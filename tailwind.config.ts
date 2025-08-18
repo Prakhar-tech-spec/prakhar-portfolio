@@ -108,6 +108,10 @@ export default {
             opacity: "0",
           },
         },
+        "infinite-scroll": {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(-100%)" },
+        },
         scroll: {
           to: {
             transform: "translate(calc(-50% - 0.5rem))",
@@ -120,6 +124,7 @@ export default {
         'float': 'float 3s ease-in-out infinite',
         "meteor-effect": "meteor 5s linear infinite",
         "scroll": "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
+        "infinite-scroll": "infinite-scroll 25s linear infinite",
       },
     },
   },
