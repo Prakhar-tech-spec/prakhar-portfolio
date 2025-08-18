@@ -2,8 +2,8 @@
 "use client";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowRight } from "lucide-react";
-import React from "react";
+import { motion, useScroll, useSpring } from "framer-motion";
+import React, { useRef } from "react";
 
 const processSteps = [
   {
@@ -28,7 +28,41 @@ const processSteps = [
   },
 ];
 
+const Step = ({ step, title, description }: { step: string; title: string; description: string; }) => {
+    const ref = useRef(null);
+    const { scrollYProgress } = useScroll({
+        target: ref,
+        offset: ["start end", "center start"]
+    });
+
+    return (
+        <motion.li 
+            ref={ref}
+            style={{ opacity: scrollYProgress }}
+            className="mb-10 ml-12"
+        >
+            <span className="absolute flex items-center justify-center w-16 h-16 bg-background rounded-full -left-8 ring-8 ring-background text-primary font-bold text-2xl border-2 border-primary">
+                {step}
+            </span>
+            <h3 className="flex items-center mb-1 text-2xl font-headline font-semibold">{title}</h3>
+            <p className="text-muted-foreground">{description}</p>
+        </motion.li>
+    )
+}
+
 export function WorkProcessSection() {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  });
+
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
+
   return (
     <section id="process" className="py-20 md:py-32">
       <div className="container">
@@ -41,23 +75,16 @@ export function WorkProcessSection() {
           </p>
         </div>
 
-        <div className="mt-16 relative">
-          <div className="absolute left-0 top-1/2 w-full h-0.5 bg-border -translate-y-1/2"></div>
-          <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {processSteps.map((step, index) => (
-              <Card key={step.title} className="bg-secondary border-secondary-foreground/10 text-center p-6 transition-transform duration-300 hover:-translate-y-2">
-                <CardHeader className="p-0 items-center">
-                    <div className="w-16 h-16 rounded-full bg-background border-2 border-primary flex items-center justify-center text-primary font-bold text-2xl mb-4">
-                        {step.step}
-                    </div>
-                    <CardTitle className="font-headline text-xl">{step.title}</CardTitle>
-                </CardHeader>
-                <CardContent className="p-0 mt-4">
-                    <p className="text-muted-foreground">{step.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+        <div ref={ref} className="mt-16 relative max-w-2xl mx-auto">
+            <motion.div 
+                style={{ scaleY: scaleX }}
+                className="absolute left-0 top-0 w-1 h-full bg-primary origin-top"
+            />
+            <ol className="relative">
+                {processSteps.map((step) => (
+                    <Step key={step.title} {...step} />
+                ))}
+            </ol>
         </div>
       </div>
     </section>
