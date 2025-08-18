@@ -35,7 +35,7 @@ export const AnimatedCarousel = ({
           <div className="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)]">
             <ul className="flex items-center justify-center md:justify-start gap-16 animate-infinite-scroll">
               {logoItems.map((logo, index) => (
-                <li key={index} className={cn("flex-shrink-0", logoContainerHeight, logoClassName)}>
+                <li key={index} className={cn("flex-shrink-0 w-48", logoContainerHeight, logoClassName)}>
                   <img
                     src={typeof logo === 'string' ? logo : logo}
                     alt={`Logo ${index + 1}`}
@@ -46,7 +46,7 @@ export const AnimatedCarousel = ({
             </ul>
             <ul className="flex items-center justify-center md:justify-start gap-16 animate-infinite-scroll" aria-hidden="true">
               {logoItems.map((logo, index) => (
-                <li key={index} className={cn("flex-shrink-0", logoContainerHeight, logoClassName)}>
+                <li key={index} className={cn("flex-shrink-0 w-48", logoContainerHeight, logoClassName)}>
                   <img
                     src={typeof logo === 'string' ? logo : logo}
                     alt={`Logo ${index + 1}`}
