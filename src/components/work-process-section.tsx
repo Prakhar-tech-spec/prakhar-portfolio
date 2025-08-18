@@ -1,8 +1,6 @@
-
 "use client";
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { motion, useScroll, useSpring, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import React, { useRef } from "react";
 import { Button } from "./ui/button";
 import { ArrowRight } from "lucide-react";
@@ -30,9 +28,14 @@ const processSteps = [
   },
 ];
 
-const Step = ({ step, title, description, index, progress, range }: { step: string; title: string; description: string; index: number, progress: any, range: any[] }) => {
-    const opacity = useTransform(progress, range, [1, 1]);
-    const color = useTransform(progress, range, ['hsl(var(--primary))', 'hsl(var(--muted-foreground))']);
+const Step = ({ step, title, description, index, progress }: { step: string; title: string; description: string; index: number, progress: any }) => {
+    const stepCount = processSteps.length;
+    const start = index / stepCount;
+    const end = (index + 1) / stepCount;
+    
+    // Animate opacity and color based on the scroll progress for the current step
+    const opacity = useTransform(progress, [start, (start + end) / 2, end], [0.3, 1, 0.3]);
+    const color = useTransform(progress, [start, (start + end) / 2, end], ['hsl(var(--muted-foreground))', 'hsl(var(--primary))', 'hsl(var(--muted-foreground))']);
 
     return (
         <motion.div style={{ opacity }} className="relative mb-24 last:mb-0">
@@ -54,7 +57,7 @@ export function WorkProcessSection() {
 
   return (
     <section id="process" className="py-20 md:py-32" ref={containerRef}>
-      <div className="container grid grid-cols-1 md:grid-cols-2 gap-16">
+      <div className="container grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
         <div className="md:sticky md:top-28 h-max">
             <h2 className="text-4xl md:text-5xl font-bold font-headline">
                 Our <span className="text-primary font-cursive">Creative</span> Journey
@@ -62,23 +65,22 @@ export function WorkProcessSection() {
             <p className="mt-4 text-lg text-muted-foreground">
                 The process we follow to help you GROW and SELL on social media that takes just 4hrs/month of your time.
             </p>
-            <Button size="lg" className="mt-8">
-                Get Started
-                <ArrowRight className="ml-2 h-5 w-5" />
+            <Button size="lg" asChild className="mt-8 bg-primary hover:bg-primary/90 text-primary-foreground">
+                <a href="https://cal.com/prakhar-creatific/30min" target="_blank" rel="noopener noreferrer">
+                  Get Started
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </a>
             </Button>
         </div>
 
         <div className="relative">
             <motion.div
-                className="absolute left-0 top-0 w-1 bg-primary origin-top"
-                style={{ scaleY: scrollYProgress, transformOrigin: 'top' }}
+                className="absolute left-0 top-0 w-0.5 bg-primary origin-top"
+                style={{ scaleY: scrollYProgress, transformOrigin: 'top', height: '100%' }}
             />
             <div className="md:pl-8">
               {processSteps.map((step, index) => {
-                  const totalSteps = processSteps.length;
-                  const start = index / totalSteps;
-                  const end = (index + 0.5) / totalSteps;
-                  return <Step key={step.step} {...step} index={index} progress={scrollYProgress} range={[start, end]} />;
+                  return <Step key={step.step} {...step} index={index} progress={scrollYProgress} />;
               })}
             </div>
         </div>
