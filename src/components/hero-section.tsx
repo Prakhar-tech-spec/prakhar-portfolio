@@ -1,4 +1,3 @@
-
 "use client";
 
 import Image from 'next/image';
@@ -24,7 +23,7 @@ export function HeroSection() {
 
   return (
     <section id="hero" className="relative overflow-hidden bg-grid-white/[0.05]">
-      <div className="container grid lg:grid-cols-2 items-center">
+      <div className="container grid lg:grid-cols-2 items-center gap-12">
         <div className="flex flex-col items-center lg:items-start gap-6 text-center lg:text-left">
           <h1 className="text-4xl md:text-6xl font-bold font-headline tracking-tight">
             Let's make your{' '}
@@ -39,7 +38,7 @@ export function HeroSection() {
           <p className="text-base md:text-lg text-muted-foreground max-w-md">
             Smart strategy. Killer creative. AI that works while you sleep.
           </p>
-          <div className="flex flex-row justify-center lg:justify-start gap-4">
+          <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 w-full sm:w-auto">
             <Button size="lg" asChild className="bg-primary hover:bg-primary/90 text-primary-foreground">
               <a href="https://api.whatsapp.com/send?phone=917029757375&text=Hi!%20I%E2%80%99m%20interested%20in%20your%20done-for-you%20creative%20and%20growth%20services.%20Can%20we%20connect%20to%20discuss%20what%20might%20be%20the%20best%20fit%3F" target="_blank" rel="noopener noreferrer">Let's Talk</a>
             </Button>
@@ -62,29 +61,29 @@ export function HeroSection() {
             </a>
           </div>
         </div>
-        <div className="relative flex justify-center items-center mt-12 lg:mt-0">
-          <div className="absolute w-full h-full max-w-[350px] max-h-[350px] md:max-w-[550px] md:max-h-[550px] bg-primary/10 rounded-lg blur-3xl z-0"></div>
+        <div className="relative flex justify-center items-center">
+          <div className="absolute w-full h-full max-w-[300px] max-h-[300px] md:max-w-[500px] md:max-h-[500px] bg-primary/10 rounded-lg blur-3xl z-0"></div>
            <Dot color="bg-primary" position="top-1/4 left-1/4" />
            <Dot color="bg-primary" position="top-1/2 right-1/4" />
            <Dot color="bg-primary" position="bottom-1/4 left-1/3" />
-           <div className="relative w-[350px] h-[350px] md:w-[550px] md:h-[550px] rounded-lg overflow-hidden z-10 shadow-2xl">
+           <div className="relative w-[300px] h-[300px] md:w-[500px] md:h-[500px] rounded-lg overflow-hidden z-10 shadow-2xl">
               <Image
                 src="https://i.postimg.cc/Kvs5Jz0J/Whats-App-Image-2025-07-14-at-3-37-33-AM-Photoroom.png"
                 alt="Agency Owner"
-                width={550}
-                height={650}
-                className="object-cover w-full h-auto md:h-[650px]"
+                width={500}
+                height={600}
+                className="object-cover w-full h-auto md:h-[600px]"
                 data-ai-hint="man portrait"
                 priority
               />
               <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-background to-transparent"></div>
            </div>
-          <div className="absolute top-10 -left-4 md:top-20 md:-left-8 z-20 animate-float">
-            <Badge className="relative text-base md:text-lg py-2 px-4 bg-primary text-primary-foreground shadow-lg transition-colors hover:bg-primary/90">
+          <div className="absolute top-4 -left-4 md:top-8 md:-left-8 z-20 animate-float">
+            <Badge className="relative text-sm md:text-lg py-2 px-4 bg-primary text-primary-foreground shadow-lg transition-colors hover:bg-primary/90">
               Hi, I'm Prakhar
             </Badge>
           </div>
-          <Badge variant="outline" className="absolute bottom-8 -right-4 md:bottom-10 md:-right-4 z-20 text-sm md:text-lg py-2 px-4 bg-background/80 backdrop-blur border-border text-foreground shadow-lg flex items-center gap-2 transition-colors hover:bg-primary/90 animate-float" style={{ animationDelay: '1.5s' }}>
+          <Badge variant="outline" className="absolute bottom-4 -right-4 md:bottom-8 md:-right-4 z-20 text-xs md:text-lg py-2 px-4 bg-background/80 backdrop-blur border-border text-foreground shadow-lg flex items-center gap-2 transition-colors hover:bg-primary/90 animate-float" style={{ animationDelay: '1.5s' }}>
             <Briefcase className="h-4 w-4 md:h-5 md:h-5 text-primary"/>
             2+ Years of Experience
           </Badge>
