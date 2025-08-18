@@ -3,6 +3,7 @@
 
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { UnderlinedText } from "./ui/underlined-text";
+import Link from "next/link";
 
 const faqs = [
     {
@@ -46,6 +47,11 @@ export function FaqSection() {
                             </AccordionItem>
                         ))}
                     </Accordion>
+                </div>
+                 <div className="flex items-center justify-center gap-4 text-sm text-muted-foreground mt-8">
+                    <Link href="/privacy-policy" className="hover:text-primary transition-colors">Privacy Policy</Link>
+                    <Link href="/refund-policy" className="hover:text-primary transition-colors">Refund Policy</Link>
+                    <Link href="/terms-of-use" className="hover:text-primary transition-colors">Terms of Use</Link>
                 </div>
             </div>
         </section>
