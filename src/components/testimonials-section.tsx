@@ -164,7 +164,7 @@ const InfiniteMovingCards = ({
 
 export function TestimonialsSection() {
   const testimonialsRowOne = testimonials.slice(0, 4);
-  const testimonialsRowTwo = testimonials.slice(4);
+  const testimonialsRowTwo = testimonials.slice(0, 4);
 
   return (
     <section id="testimonials" className="py-12 md:py-20 bg-secondary">
