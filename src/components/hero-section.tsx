@@ -34,7 +34,7 @@ export function HeroSection() {
             unforgettable
           </h1>
           <p className="text-lg text-muted-foreground font-bold italic">
-            Execute Growth & Automate
+            Your Growth, Made Simple
           </p>
           <p className="text-base md:text-lg text-muted-foreground max-w-md">
             Grow your personal brand by 2-5x in 90-120 days, guaranteed
