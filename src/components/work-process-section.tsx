@@ -41,10 +41,10 @@ const Step = ({ step, title, description, index, progress }: { step: string; tit
     return (
         <motion.div style={{ opacity }} className="relative mb-24 last:mb-0">
             <motion.div 
-                className="absolute w-2 h-2 rounded-full -left-[4.5px] top-3.5"
+                className="absolute w-2 h-2 rounded-full -left-[4.5px] top-1"
                 style={{ backgroundColor: dotColor }}
             />
-            <div className="absolute -left-12 md:-left-20 top-1 text-7xl md:text-8xl font-bold pointer-events-none opacity-20 text-background text-stroke">
+            <div className="absolute -left-12 md:-left-20 top-1 text-7xl md:text-8xl font-bold pointer-events-none text-background opacity-20 text-stroke">
                 {step}
             </div>
             <motion.h3 style={{ color }} className="mb-2 text-3xl font-bold font-headline">{title}</motion.h3>
