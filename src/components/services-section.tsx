@@ -1,6 +1,7 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import React from "react";
+import { Meteors } from "./ui/meteors";
 
 const services = [
   {
@@ -40,16 +41,21 @@ export function ServicesSection() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
           {services.map((service) => (
-            <Card key={service.title} className="group text-center flex flex-col items-center p-6 bg-background border-2 border-transparent transition-all duration-300 transform md:hover:-translate-y-2 shadow-lg hover:shadow-primary/20 md:hover:bg-primary md:hover:bg-[linear-gradient(45deg,rgba(0,0,0,0.05)_25%,transparent_25%,transparent_50%,rgba(0,0,0,0.05)_50%,rgba(0,0,0,0.05)_75%,transparent_75%,transparent)] md:hover:bg-[length:6px_6px]">
-              <CardHeader className="p-0 pt-6">
-                <CardTitle className="mt-4 font-headline md:group-hover:font-cursive md:group-hover:text-primary-foreground">{service.title}</CardTitle>
-              </CardHeader>
-              <CardContent className="flex-1 flex items-center transition-all duration-300">
-                  <p className="text-muted-foreground md:max-h-0 md:opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out md:group-hover:text-primary-foreground">
-                    {service.description}
-                  </p>
-              </CardContent>
-            </Card>
+            <div key={service.title} className="relative">
+              <Card className="group text-center flex flex-col items-center p-6 bg-background border-2 border-transparent transition-all duration-300 transform md:hover:-translate-y-2 shadow-lg hover:shadow-primary/20 md:hover:bg-primary md:hover:bg-[linear-gradient(45deg,rgba(0,0,0,0.05)_25%,transparent_25%,transparent_50%,rgba(0,0,0,0.05)_50%,rgba(0,0,0,0.05)_75%,transparent_75%,transparent)] md:hover:bg-[length:6px_6px] overflow-hidden">
+                <CardHeader className="p-0 pt-6">
+                  <CardTitle className="mt-4 font-headline md:group-hover:font-cursive md:group-hover:text-primary-foreground">{service.title}</CardTitle>
+                </CardHeader>
+                <CardContent className="flex-1 flex items-center transition-all duration-300">
+                    <p className="text-muted-foreground md:max-h-0 md:opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out md:group-hover:text-primary-foreground">
+                      {service.description}
+                    </p>
+                </CardContent>
+                <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <Meteors number={20} />
+                </div>
+              </Card>
+            </div>
           ))}
         </div>
       </div>
