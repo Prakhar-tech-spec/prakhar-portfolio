@@ -50,8 +50,8 @@ export function ServicesSection() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
           {services.map((service, index) => (
-            <div key={service.title} className="relative" style={{ transform: `rotate(${rotations[index] || 0}deg)` }}>
-              <Card className="group text-center flex flex-col items-center p-6 bg-background border-2 border-transparent transition-all duration-300 transform md:hover:-translate-y-2 md:hover:!rotate-0 shadow-lg hover:shadow-primary/20 md:hover:bg-primary md:hover:bg-[linear-gradient(45deg,rgba(0,0,0,0.05)_25%,transparent_25%,transparent_50%,rgba(0,0,0,0.05)_50%,rgba(0,0,0,0.05)_75%,transparent_75%,transparent)] md:hover:bg-[length:6px_6px] overflow-hidden">
+            <div key={service.title} className="relative group" style={{ transform: `rotate(${rotations[index] || 0}deg)` }}>
+              <Card className="text-center flex flex-col items-center p-6 bg-background border-2 border-transparent transition-all duration-300 transform md:hover:-translate-y-2 md:hover:!rotate-0 shadow-lg hover:shadow-primary/20 md:hover:bg-primary md:hover:bg-[linear-gradient(45deg,rgba(0,0,0,0.05)_25%,transparent_25%,transparent_50%,rgba(0,0,0,0.05)_50%,rgba(0,0,0,0.05)_75%,transparent_75%,transparent)] md:hover:bg-[length:6px_6px] overflow-hidden">
                 <div className="absolute inset-0 opacity-100 group-hover:opacity-0 transition-opacity duration-500">
                   <Meteors number={20} />
                 </div>

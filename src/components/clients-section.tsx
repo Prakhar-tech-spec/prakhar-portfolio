@@ -1,3 +1,5 @@
+"use client";
+
 import { AnimatedCarousel } from "./ui/logo-carousel";
 
 const stats = [
