@@ -41,7 +41,7 @@ export function ServicesSection() {
   }, []);
 
   return (
-    <section id="services" className="py-20 md:py-32 bg-secondary">
+    <section id="services" className="pb-20 md:pb-32 bg-secondary">
       <div className="container">
         <div className="text-center max-w-2xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold font-headline">
