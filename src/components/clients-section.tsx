@@ -41,7 +41,7 @@ export function ClientsSection() {
           </div>
         </div>
         <AnimatedCarousel
-          title="Trusted by brands you know"
+          title="Meet Our Partners"
           logos={partnerLogos}
           autoPlay={true}
           autoPlayInterval={4000}
