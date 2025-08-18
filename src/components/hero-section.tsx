@@ -27,7 +27,7 @@ export function HeroSection() {
         <div className="flex flex-col items-center lg:items-start gap-6 text-center lg:text-left">
           <h1 className="text-4xl md:text-6xl font-bold font-headline tracking-tight">
             Let's make your{' '}
-            <span className="text-primary">
+            <span className="text-primary font-body">
               Personal Brand
             </span>{' '}
             unforgettable
@@ -79,7 +79,7 @@ export function HeroSection() {
               <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-background to-transparent"></div>
            </div>
           <div className="absolute top-4 -left-4 md:top-8 md:-left-8 z-20 animate-float">
-            <Badge className="relative text-sm md:text-lg py-2 px-4 bg-primary text-primary-foreground shadow-lg transition-colors hover:bg-primary/90">
+            <Badge className="relative text-sm md:text-lg py-2 px-4 bg-primary text-primary-foreground shadow-lg transition-colors">
               Hi, I'm Prakhar
             </Badge>
           </div>
