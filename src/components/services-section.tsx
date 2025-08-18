@@ -1,3 +1,4 @@
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import React from "react";
 
@@ -11,10 +12,6 @@ const services = [
     description: "Crafting compelling video content that tells your story and captivates your audience.",
   },
   {
-    title: "Graphic Design",
-    description: "Creating stunning visuals, from YouTube thumbnails to complete brand assets.",
-  },
-  {
     title: "Paid Ads",
     description: "Driving targeted traffic and maximizing ROI with strategic paid advertising campaigns.",
   },
@@ -25,6 +22,10 @@ const services = [
   {
     title: "AI & Automation",
     description: "Implementing AI agents and automation to streamline your business operations.",
+  },
+  {
+    title: "Graphic Design",
+    description: "Creating stunning visuals, from YouTube thumbnails to complete brand assets.",
   },
 ];
 
@@ -47,7 +48,7 @@ export function ServicesSection() {
                 <CardTitle className="mt-4 font-headline">{service.title}</CardTitle>
               </CardHeader>
               <CardContent className="flex-1 flex items-center transition-all duration-300">
-                  <p className="text-muted-foreground max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out">
+                  <p className="text-muted-foreground md:max-h-0 md:opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out">
                     {service.description}
                   </p>
               </CardContent>
