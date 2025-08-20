@@ -5,8 +5,8 @@ import { Inter, Lexend, Felipa } from 'next/font/google'
 import { CursorFollower } from '@/components/cursor-follower';
 
 export const metadata: Metadata = {
-  title: 'Corelk Digital Agency',
-  description: 'Crafting Seamless Digital Experiences',
+  title: 'We Brand You',
+  description: 'Your Growth, Made Simple',
 };
 
 const inter = Inter({
